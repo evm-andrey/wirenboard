@@ -54,3 +54,13 @@ defineRule({
 
 // Set initial state
 dev["LivingRoomCurtainControl/curtain_position"] = isCurtainOpen ? 2 : 1;
+
+// Rule for controlling LivingRoomCurtainControl
+defineRule({
+    whenChanged: "wb-mr6c_115/Input 1 Double Press Counter",
+    then: function (newValue, devName, cellName) {
+      log('Toggle LivingRoomCurtainControl');
+      // Toggle the relay state
+      dev["LivingRoomCurtainControl/toggle_button"] = !dev["LivingRoomCurtainControl/toggle_button"];
+    }
+  });

@@ -54,3 +54,13 @@ defineRule({
 
 // Set initial state
 dev["KitchenCurtainControl/curtain_position"] = isCurtainOpen ? 2 : 1;
+
+// Rule for controlling KitchenCurtainControl
+defineRule({
+    whenChanged: "wb-mr6c_115/Input 3 Double Press Counter",
+    then: function (newValue, devName, cellName) {
+      log('Toggle KitchenCurtainControl');
+      // Toggle the relay state
+      dev["KitchenCurtainControl/toggle_button"] = !dev["KitchenCurtainControl/toggle_button"];
+    }
+  });
