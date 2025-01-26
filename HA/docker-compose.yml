@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  homeassistant:
+    image: ghcr.io/home-assistant/home-assistant:stable
+    container_name: homeassistant
+    privileged: true
+    restart: unless-stopped
+    environment:
+      - TZ=Europe/Moscow
+    volumes:
+      - /mnt/data/.HA:/config
+    ports:
+      - "8123:8123"
