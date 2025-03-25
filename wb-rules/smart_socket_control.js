@@ -1,3 +1,20 @@
+defineRule({
+    when: cron("0 0 20 * *"),
+    then: function () {
+        dev["SmartSocketControl/socket_state"] = false;
+        log("Розетка выключена по расписанию");
+    }
+});
+
+defineRule({
+    when: cron("0 0 5 * *"),
+    then: function () {
+        dev["SmartSocketControl/socket_state"] = true;
+        log("Розетка включена по расписанию");
+    }
+});
+
+
 // Определяем виртуальное устройство для управления розеткой
 defineVirtualDevice("SmartSocketControl", {
     title: { 'en': 'Smart Socket Control', 'ru': 'Управление умной розеткой' },
