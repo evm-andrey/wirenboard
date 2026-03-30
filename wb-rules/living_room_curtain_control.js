@@ -1,9 +1,12 @@
+(function () {
 /*********************
  * CONFIG
  *********************/
 var vdevName = "LivingRoomCurtainControl";
 var mqttDeviceTopic = "zigbee2mqtt/Living Room Curtain";
 var mqttSetTopic = mqttDeviceTopic + "/set";
+var remoteInputCell = "wb-mr6c_115/Input 1 Double Press Counter";
+var commandCooldownMs = 1200;
 
 var cells = {
   toggle: "toggle_button",
@@ -14,16 +17,8 @@ var cells = {
   preset100: "preset_100"
 };
 
-var presetPositions = {
-  p25: 25,
-  p50: 50,
-  p75: 75,
-  p100: 100
-};
-
-var remoteInputCell = "wb-mr6c_115/Input 1 Double Press Counter";
-var commandCooldownMs = 1200;
 var lastCommandAt = 0;
+var openThreshold = 50;
 
 /*********************
  * HELPERS
@@ -41,6 +36,17 @@ function setIfChanged(cellName, value) {
   return false;
 }
 
+function toFiniteNumber(value) {
+  if (typeof value === "number" && isFinite(value)) {
+    return value;
+  }
+  var numeric = parseInt(value, 10);
+  if (isFinite(numeric)) {
+    return numeric;
+  }
+  return null;
+}
+
 function clampPosition(value) {
   var position = parseInt(value, 10);
   if (!isFinite(position)) {
@@ -56,13 +62,13 @@ function clampPosition(value) {
 }
 
 function isMostlyOpen(positionPercent) {
-  return positionPercent <= 50;
+  return positionPercent <= openThreshold;
 }
 
 function publishCurtainPosition(targetPercent) {
   var target = clampPosition(targetPercent);
   if (target === null) {
-    log("MQTT command skipped: invalid curtain position");
+    log("MQTT curtain command skipped: invalid target position");
     return;
   }
 
@@ -78,11 +84,9 @@ function publishCurtainPosition(targetPercent) {
   }
 
   var payload = JSON.stringify({ position: target });
-  // publish(topic, payload, qos, retain)
   publish(mqttSetTopic, payload, 1, false);
   lastCommandAt = now;
 
-  // Optimistic update for UI responsiveness.
   setIfChanged(cells.position, target);
   log("MQTT curtain command published to " + mqttSetTopic + ": " + payload);
 }
@@ -90,20 +94,9 @@ function publishCurtainPosition(targetPercent) {
 function toggleCurtain() {
   var current = toFiniteNumber(dev[cellPath(cells.position)]);
   if (current === null) {
-    current = presetPositions.p100;
+    current = 100;
   }
-  publishCurtainPosition(isMostlyOpen(current) ? presetPositions.p100 : presetPositions.p25);
-}
-
-function toFiniteNumber(value) {
-  if (typeof value === "number" && isFinite(value)) {
-    return value;
-  }
-  var numeric = parseInt(value, 10);
-  if (isFinite(numeric)) {
-    return numeric;
-  }
-  return null;
+  publishCurtainPosition(isMostlyOpen(current) ? 100 : 25);
 }
 
 function handleStatePayload(payload) {
@@ -119,9 +112,9 @@ function handleStatePayload(payload) {
   if (nextState === null && typeof payload.state === "string") {
     var normalized = payload.state.toUpperCase();
     if (normalized === "OPEN" || normalized === "OPENING") {
-      nextState = presetPositions.p25;
+      nextState = 25;
     } else if (normalized === "CLOSED" || normalized === "CLOSING") {
-      nextState = presetPositions.p100;
+      nextState = 100;
     }
   }
 
@@ -143,7 +136,7 @@ defineVirtualDevice(vdevName, {
     curtain_position: {
       type: "value",
       readonly: true,
-      value: presetPositions.p100,
+      value: 100,
       title: { "en": "Curtain Position (%)", "ru": "Положение штор (%)" },
       units: "%"
     },
@@ -167,10 +160,10 @@ defineVirtualDevice(vdevName, {
 });
 
 /*********************
- * COMMAND RULES
+ * RULES
  *********************/
 defineRule({
-  name: "LivingRoomCurtainControl/toggle_local",
+  name: vdevName + "/toggle_local",
   whenChanged: cellPath(cells.toggle),
   then: function () {
     toggleCurtain();
@@ -178,7 +171,7 @@ defineRule({
 });
 
 defineRule({
-  name: "LivingRoomCurtainControl/toggle_remote",
+  name: vdevName + "/toggle_remote",
   whenChanged: remoteInputCell,
   then: function () {
     log("Toggle from remote input");
@@ -187,39 +180,39 @@ defineRule({
 });
 
 defineRule({
-  name: "LivingRoomCurtainControl/preset_25",
+  name: vdevName + "/preset_25",
   whenChanged: cellPath(cells.preset25),
   then: function () {
-    publishCurtainPosition(presetPositions.p25);
+    publishCurtainPosition(25);
   }
 });
 
 defineRule({
-  name: "LivingRoomCurtainControl/preset_50",
+  name: vdevName + "/preset_50",
   whenChanged: cellPath(cells.preset50),
   then: function () {
-    publishCurtainPosition(presetPositions.p50);
+    publishCurtainPosition(50);
   }
 });
 
 defineRule({
-  name: "LivingRoomCurtainControl/preset_75",
+  name: vdevName + "/preset_75",
   whenChanged: cellPath(cells.preset75),
   then: function () {
-    publishCurtainPosition(presetPositions.p75);
+    publishCurtainPosition(75);
   }
 });
 
 defineRule({
-  name: "LivingRoomCurtainControl/preset_100",
+  name: vdevName + "/preset_100",
   whenChanged: cellPath(cells.preset100),
   then: function () {
-    publishCurtainPosition(presetPositions.p100);
+    publishCurtainPosition(100);
   }
 });
 
 /*********************
- * MQTT TRACKER: UPDATE ONLY THE FACT
+ * TELEMETRY UPDATE
  *********************/
 trackMqtt(mqttDeviceTopic, function (message) {
   try {
@@ -234,3 +227,4 @@ trackMqtt(mqttDeviceTopic, function (message) {
     log("MQTT JSON parse error: " + e);
   }
 });
+})();
