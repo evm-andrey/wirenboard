@@ -1,9 +1,145 @@
 /*********************
  *  CONFIG
  *********************/
-// Base Zigbee2MQTT topics for the specific device
+var vdevName = "SmartSocketControl2";
 var mqttDeviceTopic = "zigbee2mqtt/0x0c4314fffe52ac2d";
-var mqttSetTopic    = mqttDeviceTopic + "/set";
+var mqttSetTopic = mqttDeviceTopic + "/set";
+var mqttStateOn = "ON";
+var mqttStateOff = "OFF";
+
+var cells = {
+  cmd: "socket_cmd",
+  state: "socket_state",
+  power: "power_value",
+  current: "current_value",
+  voltage: "voltage_value",
+  energy: "energy_value",
+  linkQuality: "linkquality_value",
+  lastSeen: "last_seen_value"
+};
+
+var socketCmdPath = vdevName + "/" + cells.cmd;
+var socketStatePath = vdevName + "/" + cells.state;
+
+// Debounce merges fast toggles into one command (in ms).
+var commandDebounceMs = 250;
+// Cooldown blocks too-frequent MQTT writes even if state still changes (in ms).
+var commandCooldownMs = 1200;
+var lastCommandAt = 0;
+var pendingCommandTimer = null;
+var pendingCommandState = null;
+
+function vdevPath(cell) {
+  return vdevName + "/" + cell;
+}
+
+function toBooleanState(mqttState) {
+  return mqttState === mqttStateOn || mqttState === true;
+}
+
+function normalizeState(rawState) {
+  if (typeof rawState === "boolean") {
+    return rawState;
+  }
+  if (typeof rawState === "number") {
+    if (rawState === 1) {
+      return true;
+    }
+    if (rawState === 0) {
+      return false;
+    }
+  }
+  if (typeof rawState !== "string") {
+    return null;
+  }
+
+  var state = rawState.toUpperCase();
+  if (state === mqttStateOn || state === "1" || state === "TRUE") {
+    return true;
+  }
+  if (state === mqttStateOff || state === "0" || state === "FALSE") {
+    return false;
+  }
+  return null;
+}
+
+function publishStateCommand(desiredState) {
+  var actualState = toBooleanState(dev[socketStatePath]);
+  if (desiredState === actualState) {
+    log("No MQTT command sent: already in state " + (actualState ? mqttStateOn : mqttStateOff));
+    return;
+  }
+
+  var now = Date.now();
+  if (lastCommandAt > 0 && (now - lastCommandAt) < commandCooldownMs) {
+    log("No MQTT command sent: cooldown " + commandCooldownMs + " ms");
+    return;
+  }
+
+  var desired = desiredState ? mqttStateOn : mqttStateOff;
+  var command = JSON.stringify({ state: desired });
+  publish(mqttSetTopic, command, 1, false);
+  lastCommandAt = now;
+  log("MQTT command published to " + mqttSetTopic + ": " + command);
+}
+
+function debounceCommand(newState) {
+  if (pendingCommandTimer !== null) {
+    log("MQTT command pending, rescheduling for debounce");
+  }
+  pendingCommandState = newState;
+  pendingCommandTimer = setTimeout(function () {
+    pendingCommandTimer = null;
+    publishStateCommand(pendingCommandState);
+    pendingCommandState = null;
+  }, commandDebounceMs);
+}
+
+function pad2(value) {
+  return value < 10 ? "0" + value : String(value);
+}
+
+function formatDate(value) {
+  if (typeof value === "number" && isFinite(value)) {
+    var ms = value;
+    if (ms < 1000000000000) {
+      ms = ms * 1000;
+    }
+    var d = new Date(ms);
+    if (!isNaN(d.getTime())) {
+      return d.getFullYear() + "-" +
+        pad2(d.getMonth() + 1) + "-" +
+        pad2(d.getDate()) + " " +
+        pad2(d.getHours()) + ":" +
+        pad2(d.getMinutes()) + ":" +
+        pad2(d.getSeconds());
+    }
+  }
+
+  return String(value);
+}
+
+function setIfChanged(cell, value) {
+  if (dev[vdevPath(cell)] !== value) {
+    dev[vdevPath(cell)] = value;
+    return true;
+  }
+  return false;
+}
+
+function updateNumericCell(cell, payloadValue) {
+  if (typeof payloadValue === "number" && isFinite(payloadValue)) {
+    if (setIfChanged(cell, payloadValue)) {
+      log(cell + " updated: " + payloadValue);
+    }
+  }
+}
+
+/*********************
+ *  VIRTUAL DEVICE
+ *  - Separate command and actual state to avoid feedback loops.
+ *  - Telemetry values (power, current, linkquality, last_seen) are read-only from MQTT.
+ *********************/
 
 /*********************
  *  VIRTUAL DEVICE
@@ -68,20 +204,14 @@ defineVirtualDevice("SmartSocketControl2", {
  *  - Send MQTT command only if desired != actual to reduce traffic & avoid loops.
  *********************/
 defineRule({
-  whenChanged: "SmartSocketControl2/socket_cmd",
+  whenChanged: socketCmdPath,
   then: function (newValue) {
-    var desired = newValue ? "ON" : "OFF";
-    var actual  = dev["SmartSocketControl2/socket_state"] ? "ON" : "OFF";
-
-    if (desired === actual) {
-      log("No MQTT command sent: actual state is already " + actual);
+    var desired = normalizeState(newValue);
+    if (desired === null) {
+      log("MQTT command skipped: invalid " + cells.cmd + " value " + JSON.stringify(newValue));
       return;
     }
-
-    var command = JSON.stringify({ state: desired });
-    // publish(topic, payload, [qos], [retain])
-    publish(mqttSetTopic, command);
-    log("MQTT command published to " + mqttSetTopic + ": " + command);
+    debounceCommand(desired);
   }
 });
 
@@ -92,54 +222,34 @@ defineRule({
  *********************/
 trackMqtt(mqttDeviceTopic, function (message) {
   try {
+    if (!message || typeof message.value !== "string") {
+      log("MQTT message skipped: invalid message format");
+      return;
+    }
+
     var payload = JSON.parse(message.value);
     log("MQTT message received from " + mqttDeviceTopic + ": " + JSON.stringify(payload));
 
     // Update actual ON/OFF state (only if it really changed)
-    if (payload.state === "ON" || payload.state === "OFF") {
-      var stateBool = (payload.state === "ON");
-      if (dev["SmartSocketControl2/socket_state"] !== stateBool) {
-        dev["SmartSocketControl2/socket_state"] = stateBool;
+    var state = normalizeState(payload.state);
+    if (state !== null) {
+      if (setIfChanged(cells.state, state)) {
         log("Actual socket state updated from MQTT: " + payload.state);
       }
     }
 
     // Update telemetry if present
-    if (typeof payload.power === "number") {
-      dev["SmartSocketControl2/power_value"] = payload.power;
-      log("Power: " + payload.power + " W");
-    }
-    if (typeof payload.current === "number") {
-      dev["SmartSocketControl2/current_value"] = payload.current;
-      log("Current: " + payload.current + " A");
-    }
-    if (typeof payload.voltage === "number") {
-      dev["SmartSocketControl2/voltage_value"] = payload.voltage;
-      log("Voltage: " + payload.voltage + " V");
-    }
-    if (typeof payload.energy === "number") {
-      dev["SmartSocketControl2/energy_value"] = payload.energy;
-      log("Energy total: " + payload.energy + " kWh");
-    }
-    if (typeof payload.linkquality === "number") {
-      dev["SmartSocketControl2/linkquality_value"] = payload.linkquality;
-      log("Link quality: " + payload.linkquality);
-    }
+    updateNumericCell(cells.power, payload.power);
+    updateNumericCell(cells.current, payload.current);
+    updateNumericCell(cells.voltage, payload.voltage);
+    updateNumericCell(cells.energy, payload.energy);
+    updateNumericCell(cells.linkQuality, payload.linkquality);
+
     if (payload.last_seen !== undefined) {
-      var lastSeenText = String(payload.last_seen);
-      if (typeof payload.last_seen === "number") {
-        // Zigbee2MQTT uses unix ms; show local time in YYYY-MM-DD HH:MM:SS.
-        var d = new Date(payload.last_seen);
-        var pad2 = function (n) { return (n < 10 ? "0" : "") + n; };
-        lastSeenText = d.getFullYear() + "-" +
-          pad2(d.getMonth() + 1) + "-" +
-          pad2(d.getDate()) + " " +
-          pad2(d.getHours()) + ":" +
-          pad2(d.getMinutes()) + ":" +
-          pad2(d.getSeconds());
+      var lastSeen = formatDate(payload.last_seen);
+      if (setIfChanged(cells.lastSeen, lastSeen)) {
+        log("Last seen: " + lastSeen);
       }
-      dev["SmartSocketControl2/last_seen_value"] = lastSeenText;
-      log("Last seen: " + lastSeenText);
     }
   } catch (e) {
     log("MQTT JSON parse error: " + e);
