@@ -1,0 +1,98 @@
+<svg width="550" height="260" viewBox="0 0 550 260" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="#121212"/>
+  <style>
+    text { font-family: sans-serif; }
+    .room-name { font-size: 14px; font-weight: bold; fill: #fff; }
+    .value-text { font-size: 12px; fill: #ccc; }
+  </style>
+  <g id="thermostat-bedroom-card" transform="translate(10,10)">
+    <rect width="170" height="110" rx="8" fill="#1e1e1e" stroke="#333"/>
+    <text x="10" y="20" class="room-name">Спальня</text>
+    <g transform="translate(10,36)">
+      <circle cx="0" cy="0" r="5" fill="none" stroke="#ccc" stroke-width="2"/>
+      <circle cx="0" cy="0" r="1.5" fill="#ccc"/>
+    </g>
+    <text x="30" y="40" class="value-text" id="thermostat-bedroom-setpoint">21 °C</text>
+    <g transform="translate(10,52) scale(0.7)">
+      <path d="M12 19C12.5523 19 13 18.5523 13 18C13 17.4477 12.5523 17 12 17C11.4477 17 11 17.4477 11 18C11 18.5523 11.4477 19 12 19Z" fill="#ccc"/>
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M15 13.9997C16.2144 14.9119 17 16.3642 17 18C17 20.7614 14.7614 23 12 23C9.23858 23 7 20.7614 7 18C7 16.3642 7.78555 14.9119 9 13.9997V4C9 2.34315 10.3431 1 12 1C13.6569 1 15 2.34315 15 4V13.9997ZM13 4V15.1707C14.1652 15.5826 15 16.6938 15 18C15 19.6569 13.6569 21 12 21C10.3431 21 9 19.6569 9 18C9 16.6938 9.83481 15.5826 11 15.1707V4C11 3.44772 11.4477 3 12 3C12.5523 3 13 3.44772 13 4Z" fill="#ccc"/>
+    </g>
+    <text x="30" y="60" class="value-text" id="thermostat-bedroom-temperature">20 °C</text>
+    <g transform="translate(10,72) scale(0.8)">
+      <path d="M0,0 C5,-5 4,-15 0,-20 C -4,-15 -5,-5 0,0 Z" fill="#ccc"/>
+    </g>
+    <text x="30" y="80" class="value-text" id="thermostat-bedroom-state">ОТКЛ</text>
+  </g>
+  <g id="thermostat-shower-card" transform="translate(190,10)">
+    <rect width="170" height="110" rx="8" fill="#1e1e1e" stroke="#333"/>
+    <text x="10" y="20" class="room-name">Душевая</text>
+    <g transform="translate(10,36)">
+      <circle cx="0" cy="0" r="5" fill="none" stroke="#ccc" stroke-width="2"/>
+      <circle cx="0" cy="0" r="1.5" fill="#ccc"/>
+    </g>
+    <text x="30" y="40" class="value-text" id="thermostat-shower-setpoint">21 °C</text>
+    <g transform="translate(10,52) scale(0.7)">
+      <path d="M12 19C12.5523 19 13 18.5523 13 18C13 17.4477 12.5523 17 12 17C11.4477 17 11 17.4477 11 18C11 18.5523 11.4477 19 12 19Z" fill="#ccc"/>
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M15 13.9997C16.2144 14.9119 17 16.3642 17 18C17 20.7614 14.7614 23 12 23C9.23858 23 7 20.7614 7 18C7 16.3642 7.78555 14.9119 9 13.9997V4C9 2.34315 10.3431 1 12 1C13.6569 1 15 2.34315 15 4V13.9997ZM13 4V15.1707C14.1652 15.5826 15 16.6938 15 18C15 19.6569 13.6569 21 12 21C10.3431 21 9 19.6569 9 18C9 16.6938 9.83481 15.5826 11 15.1707V4C11 3.44772 11.4477 3 12 3C12.5523 3 13 3.44772 13 4Z" fill="#ccc"/>
+    </g>
+    <text x="30" y="60" class="value-text" id="thermostat-shower-temperature">20 °C</text>
+    <g transform="translate(10,72) scale(0.8)">
+      <path d="M0,0 C5,-5 4,-15 0,-20 C -4,-15 -5,-5 0,0 Z" fill="#ccc"/>
+    </g>
+    <text x="30" y="80" class="value-text" id="thermostat-shower-state">ОТКЛ</text>
+  </g>
+  <g id="thermostat-corridor-card" transform="translate(370,10)">
+    <rect width="170" height="110" rx="8" fill="#1e1e1e" stroke="#333"/>
+    <text x="10" y="20" class="room-name">Коридор</text>
+    <g transform="translate(10,36)">
+      <circle cx="0" cy="0" r="5" fill="none" stroke="#ccc" stroke-width="2"/>
+      <circle cx="0" cy="0" r="1.5" fill="#ccc"/>
+    </g>
+    <text x="30" y="40" class="value-text" id="thermostat-corridor-setpoint">21 °C</text>
+    <g transform="translate(10,52) scale(0.7)">
+      <path d="M12 19C12.5523 19 13 18.5523 13 18C13 17.4477 12.5523 17 12 17C11.4477 17 11 17.4477 11 18C11 18.5523 11.4477 19 12 19Z" fill="#ccc"/>
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M15 13.9997C16.2144 14.9119 17 16.3642 17 18C17 20.7614 14.7614 23 12 23C9.23858 23 7 20.7614 7 18C7 16.3642 7.78555 14.9119 9 13.9997V4C9 2.34315 10.3431 1 12 1C13.6569 1 15 2.34315 15 4V13.9997ZM13 4V15.1707C14.1652 15.5826 15 16.6938 15 18C15 19.6569 13.6569 21 12 21C10.3431 21 9 19.6569 9 18C9 16.6938 9.83481 15.5826 11 15.1707V4C11 3.44772 11.4477 3 12 3C12.5523 3 13 3.44772 13 4Z" fill="#ccc"/>
+    </g>
+    <text x="30" y="60" class="value-text" id="thermostat-corridor-temperature">20 °C</text>
+    <g transform="translate(10,72) scale(0.8)">
+      <path d="M0,0 C5,-5 4,-15 0,-20 C -4,-15 -5,-5 0,0 Z" fill="#ccc"/>
+    </g>
+    <text x="30" y="80" class="value-text" id="thermostat-corridor-state">ОТКЛ</text>
+  </g>
+  <g id="thermostat-bathroom-card" transform="translate(105,140)">
+    <rect width="170" height="110" rx="8" fill="#1e1e1e" stroke="#333"/>
+    <text x="10" y="20" class="room-name">Ванная</text>
+    <g transform="translate(10,36)">
+      <circle cx="0" cy="0" r="5" fill="none" stroke="#ccc" stroke-width="2"/>
+      <circle cx="0" cy="0" r="1.5" fill="#ccc"/>
+    </g>
+    <text x="30" y="40" class="value-text" id="thermostat-bathroom-setpoint">21 °C</text>
+    <g transform="translate(10,52) scale(0.7)">
+      <path d="M12 19C12.5523 19 13 18.5523 13 18C13 17.4477 12.5523 17 12 17C11.4477 17 11 17.4477 11 18C11 18.5523 11.4477 19 12 19Z" fill="#ccc"/>
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M15 13.9997C16.2144 14.9119 17 16.3642 17 18C17 20.7614 14.7614 23 12 23C9.23858 23 7 20.7614 7 18C7 16.3642 7.78555 14.9119 9 13.9997V4C9 2.34315 10.3431 1 12 1C13.6569 1 15 2.34315 15 4V13.9997ZM13 4V15.1707C14.1652 15.5826 15 16.6938 15 18C15 19.6569 13.6569 21 12 21C10.3431 21 9 19.6569 9 18C9 16.6938 9.83481 15.5826 11 15.1707V4C11 3.44772 11.4477 3 12 3C12.5523 3 13 3.44772 13 4Z" fill="#ccc"/>
+    </g>
+    <text x="30" y="60" class="value-text" id="thermostat-bathroom-temperature">20 °C</text>
+    <g transform="translate(10,72) scale(0.8)">
+      <path d="M0,0 C5,-5 4,-15 0,-20 C -4,-15 -5,-5 0,0 Z" fill="#ccc"/>
+    </g>
+    <text x="30" y="80" class="value-text" id="thermostat-bathroom-state">ОТКЛ</text>
+  </g>
+  <g id="thermostat-livingroom-card" transform="translate(285,140)">
+    <rect width="170" height="110" rx="8" fill="#1e1e1e" stroke="#333"/>
+    <text x="10" y="20" class="room-name">Гостиная</text>
+    <g transform="translate(10,36)">
+      <circle cx="0" cy="0" r="5" fill="none" stroke="#ccc" stroke-width="2"/>
+      <circle cx="0" cy="0" r="1.5" fill="#ccc"/>
+    </g>
+    <text x="30" y="40" class="value-text" id="thermostat-livingroom-setpoint">21 °C</text>
+    <g transform="translate(10,52) scale(0.7)">
+      <path d="M12 19C12.5523 19 13 18.5523 13 18C13 17.4477 12.5523 17 12 17C11.4477 17 11 17.4477 11 18C11 18.5523 11.4477 19 12 19Z" fill="#ccc"/>
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M15 13.9997C16.2144 14.9119 17 16.3642 17 18C17 20.7614 14.7614 23 12 23C9.23858 23 7 20.7614 7 18C7 16.3642 7.78555 14.9119 9 13.9997V4C9 2.34315 10.3431 1 12 1C13.6569 1 15 2.34315 15 4V13.9997ZM13 4V15.1707C14.1652 15.5826 15 16.6938 15 18C15 19.6569 13.6569 21 12 21C10.3431 21 9 19.6569 9 18C9 16.6938 9.83481 15.5826 11 15.1707V4C11 3.44772 11.4477 3 12 3C12.5523 3 13 3.44772 13 4Z" fill="#ccc"/>
+    </g>
+    <text x="30" y="60" class="value-text" id="thermostat-livingroom-temperature">20 °C</text>
+    <g transform="translate(10,72) scale(0.8)">
+      <path d="M0,0 C5,-5 4,-15 0,-20 C -4,-15 -5,-5 0,0 Z" fill="#ccc"/>
+    </g>
+    <text x="30" y="80" class="value-text" id="thermostat-livingroom-state">ОТКЛ</text>
+  </g>
+</svg>
