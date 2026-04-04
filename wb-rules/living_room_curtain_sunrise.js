@@ -176,7 +176,8 @@
   function isAlreadyOpenEnough() {
     var currentPos = dev[curtainPositionStatePath];
     if (!isFiniteNumber(currentPos)) return false;
-    return currentPos >= (desiredOpenPosition - 1);
+    // For these Zigbee curtain motors lower percentage means more open.
+    return currentPos <= (desiredOpenPosition + 1);
   }
 
   function publishOpenCommand(targetPosition) {
