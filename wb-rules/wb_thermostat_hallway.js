@@ -19,16 +19,20 @@ trackMqtt("zigbee2mqtt/Thermostat hallway", function(message) {
         log("Ошибка парсинга JSON: " + e);
         return;
     }
-    if ("local_temperature" in data) {
+    if (data === null || typeof data !== "object") {
+        log("Игнорируется не объект JSON термостата");
+        return;
+    }
+    if (typeof data.local_temperature === "number" && isFinite(data.local_temperature)) {
         dev["WB_thermostat_hallway"]["local_temperature"] = data.local_temperature;
     }
-    if ("running_state" in data) {
+    if (typeof data.running_state === "string") {
         dev["WB_thermostat_hallway"]["running_state"] = data.running_state;
     }
-    if ("current_heating_setpoint" in data) {
+    if (typeof data.current_heating_setpoint === "number" && isFinite(data.current_heating_setpoint)) {
         dev["WB_thermostat_hallway"]["current_heating_setpoint"] = data.current_heating_setpoint;
     }
-    if ("system_mode" in data) {
+    if (typeof data.system_mode === "string") {
         dev["WB_thermostat_hallway"]["system_mode"] = (data.system_mode === "heat");
     }
 });

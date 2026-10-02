@@ -5,6 +5,7 @@ defineVirtualDevice("WB_thermostat_shower_room", {
     title: "Thermostat Shower Room",
     cells: {
         current_heating_setpoint: { type: "range", min: 20, max: 30, value: 20 },
+        heating_setpoint_state: { type: "value", title: "Фактическая уставка", value: 0, readonly: true },
         local_temperature: { type: "value", value: 0, readonly: true },
         system_mode: { type: "switch", value: false },
         running_state: { type: "text", value: "", readonly: true }
@@ -19,16 +20,25 @@ trackMqtt("zigbee2mqtt/Thermostat shower room", function(message) {
         log("Ошибка парсинга JSON: " + e);
         return;
     }
-    if ("local_temperature" in data) {
+    if (data === null || typeof data !== "object") {
+        log("Игнорируется не объект JSON термостата");
+        return;
+    }
+    if (typeof data.local_temperature === "number" && isFinite(data.local_temperature)) {
         dev["WB_thermostat_shower_room"]["local_temperature"] = data.local_temperature;
     }
-    if ("running_state" in data) {
+    if (typeof data.running_state === "string") {
         dev["WB_thermostat_shower_room"]["running_state"] = data.running_state;
     }
-    if ("current_heating_setpoint" in data) {
-        dev["WB_thermostat_shower_room"]["current_heating_setpoint"] = data.current_heating_setpoint;
+    if (typeof data.current_heating_setpoint === "number" && isFinite(data.current_heating_setpoint)) {
+        // Фактическая уставка может быть вне пользовательского диапазона команд 20–30.
+        // Не изменяем уставку устройства и разрешённый диапазон UI.
+        dev["WB_thermostat_shower_room"]["heating_setpoint_state"] = data.current_heating_setpoint;
+        if (data.current_heating_setpoint >= 20 && data.current_heating_setpoint <= 30) {
+            dev["WB_thermostat_shower_room"]["current_heating_setpoint"] = data.current_heating_setpoint;
+        }
     }
-    if ("system_mode" in data) {
+    if (typeof data.system_mode === "string") {
         dev["WB_thermostat_shower_room"]["system_mode"] = (data.system_mode === "heat");
     }
 });
