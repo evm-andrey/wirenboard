@@ -1,0 +1,375 @@
+[
+  {
+    "name": "Прихожая",
+    "lights": [
+      {
+        "id": "wb-mr6c_111/K4",
+        "name": "Основной",
+        "extra": {},
+        "type": "switch"
+      },
+      {
+        "id": "wb-mr6c_111/K3",
+        "name": "Подсветка стены",
+        "extra": {},
+        "type": "switch"
+      },
+      {
+        "id": "wb-mr6c_22/K1",
+        "name": "Бра",
+        "extra": {},
+        "type": "switch"
+      }
+    ],
+    "dimmers": [],
+    "key": "entryway",
+    "title": "🚪 Прихожая"
+  },
+  {
+    "name": "Коридор",
+    "lights": [
+      {
+        "id": "wb-led_70/Channel 4",
+        "name": "Плинтус 1",
+        "extra": {},
+        "type": "switch"
+      },
+      {
+        "id": "wb-led_70/Channel 3",
+        "name": "Плинтус 2",
+        "extra": {},
+        "type": "switch"
+      },
+      {
+        "id": "wb-mr6c_108/K4",
+        "name": "Трек",
+        "extra": {},
+        "type": "switch"
+      }
+    ],
+    "dimmers": [
+      {
+        "id": "wb-led_70/Channel 4 Brightness",
+        "name": "Яркость · Плинтус 1",
+        "type": "range",
+        "extra": {}
+      },
+      {
+        "id": "wb-led_70/Channel 3 Brightness",
+        "name": "Яркость · Плинтус 2",
+        "type": "range",
+        "extra": {}
+      }
+    ],
+    "key": "hallway",
+    "title": "✨ Коридор"
+  },
+  {
+    "name": "Кухня",
+    "lights": [
+      {
+        "id": "wb-led_70/Channel 1",
+        "name": "Остров",
+        "extra": {},
+        "type": "switch"
+      },
+      {
+        "id": "wb-mr6c_115/K2",
+        "name": "Трек",
+        "extra": {},
+        "type": "switch"
+      },
+      {
+        "id": "wb-led_70/Channel 2",
+        "name": "Шкаф",
+        "extra": {},
+        "type": "switch"
+      },
+      {
+        "id": "wb-mr6c_115/K3",
+        "name": "Карниз",
+        "extra": {},
+        "type": "switch"
+      }
+    ],
+    "dimmers": [
+      {
+        "id": "wb-led_70/Channel 1 Brightness",
+        "name": "Яркость · Остров",
+        "type": "range",
+        "extra": {}
+      },
+      {
+        "id": "wb-led_70/Channel 2 Brightness",
+        "name": "Яркость · Шкаф",
+        "type": "range",
+        "extra": {}
+      }
+    ],
+    "key": "kitchen",
+    "title": "🍽️ Кухня"
+  },
+  {
+    "name": "Гостиная",
+    "lights": [
+      {
+        "id": "wb-mr6c_115/K1",
+        "name": "Карниз",
+        "extra": {},
+        "type": "switch"
+      },
+      {
+        "id": "wb-mr6c_22/K3",
+        "name": "Лоджия",
+        "extra": {},
+        "type": "switch"
+      },
+      {
+        "id": "wb-mr6c_111/K2",
+        "name": "Люстра",
+        "extra": {},
+        "type": "switch"
+      },
+      {
+        "id": "wb-mr6c_115/K4",
+        "name": "Трек",
+        "extra": {},
+        "type": "switch"
+      },
+      {
+        "id": "wb-mr6c_115/K6",
+        "name": "Бра правая",
+        "extra": {},
+        "type": "switch"
+      },
+      {
+        "id": "wb-mr6c_115/K5",
+        "name": "Бра левая",
+        "extra": {},
+        "type": "switch"
+      }
+    ],
+    "dimmers": [],
+    "key": "living_room",
+    "title": "🛋️ Гостиная"
+  },
+  {
+    "name": "Спальня",
+    "lights": [
+      {
+        "id": "wb-mr6c_110/K1",
+        "name": "Ночник Правый",
+        "extra": {},
+        "type": "switch"
+      },
+      {
+        "id": "wb-mr6c_110/K2",
+        "name": "Ночник Левый",
+        "extra": {},
+        "type": "switch"
+      },
+      {
+        "id": "wb-mr6c_110/K4",
+        "name": "Гардеробная Правая",
+        "extra": {},
+        "type": "switch"
+      },
+      {
+        "id": "wb-mr6c_110/K5",
+        "name": "Гардеробная Левая",
+        "extra": {},
+        "type": "switch"
+      },
+      {
+        "id": "wb-mr6c_110/K6",
+        "name": "Бра",
+        "extra": {},
+        "type": "switch"
+      },
+      {
+        "id": "wb-mr6c_108/K6",
+        "name": "Лоджия Точечный",
+        "extra": {},
+        "type": "switch"
+      },
+      {
+        "id": "wb-mr6c_108/K5",
+        "name": "Лоджия Бра",
+        "extra": {},
+        "type": "switch"
+      },
+      {
+        "id": "wb-mr6c_22/K6",
+        "name": "Подсветка стены",
+        "extra": {},
+        "type": "switch"
+      },
+      {
+        "id": "wb-mr6c_110/K3",
+        "name": "Трек",
+        "extra": {},
+        "type": "switch"
+      }
+    ],
+    "dimmers": [],
+    "key": "bedroom",
+    "title": "🛏️ Спальня"
+  },
+  {
+    "name": "Детская Ярослав",
+    "lights": [
+      {
+        "id": "wb-mr6c_102/K6",
+        "name": "Точечный",
+        "extra": {},
+        "type": "switch"
+      },
+      {
+        "id": "wb-mr6c_102/K4",
+        "name": "Бра",
+        "extra": {},
+        "type": "switch"
+      },
+      {
+        "id": "wb-mr6c_130/K1",
+        "name": "Led",
+        "extra": {},
+        "type": "switch"
+      },
+      {
+        "id": "wb-mr6c_130/K3",
+        "name": "Трек",
+        "extra": {},
+        "type": "switch"
+      },
+      {
+        "id": "wb-mr6c_102/K5",
+        "name": "У окна",
+        "extra": {},
+        "type": "switch"
+      }
+    ],
+    "dimmers": [],
+    "key": "child_yaroslav",
+    "title": "🧸 Детская · Ярослав"
+  },
+  {
+    "name": "Детская Дима",
+    "lights": [
+      {
+        "id": "wb-mr6c_102/K3",
+        "name": "Точечный",
+        "extra": {},
+        "type": "switch"
+      },
+      {
+        "id": "wb-mr6c_102/K1",
+        "name": "Бра",
+        "extra": {},
+        "type": "switch"
+      },
+      {
+        "id": "wb-mr6c_102/K2",
+        "name": "Трек",
+        "extra": {},
+        "type": "switch"
+      },
+      {
+        "id": "wb-mr6c_22/K2",
+        "name": "Led",
+        "extra": {},
+        "type": "switch"
+      },
+      {
+        "id": "wb-mr6c_130/K2",
+        "name": "У окна",
+        "extra": {},
+        "type": "switch"
+      }
+    ],
+    "dimmers": [],
+    "key": "child_dima",
+    "title": "🧸 Детская · Дима"
+  },
+  {
+    "name": "Ванная",
+    "lights": [
+      {
+        "id": "wb-mr6c_130/K5",
+        "name": "Бра",
+        "extra": {},
+        "type": "switch"
+      },
+      {
+        "id": "wb-mr6c_130/K6",
+        "name": "Точечный",
+        "extra": {},
+        "type": "switch"
+      },
+      {
+        "id": "wb-mr6c_111/K1",
+        "name": "Подсветка",
+        "extra": {},
+        "type": "switch"
+      }
+    ],
+    "dimmers": [],
+    "key": "bathroom",
+    "title": "🛁 Ванная"
+  },
+  {
+    "name": "Душ",
+    "lights": [
+      {
+        "id": "wb-mr6c_108/K3",
+        "name": "Бра",
+        "extra": {},
+        "type": "switch"
+      },
+      {
+        "id": "wb-led_29/Channels 1_2_3_4",
+        "name": "Основное",
+        "type": "switch",
+        "extra": {}
+      }
+    ],
+    "dimmers": [
+      {
+        "id": "wb-led_29/Channels 1_2_3_4 Brightness",
+        "name": "Яркость · Основное",
+        "type": "range",
+        "extra": {}
+      }
+    ],
+    "key": "shower",
+    "title": "🚿 Душевая"
+  },
+  {
+    "name": "Постирочная",
+    "lights": [
+      {
+        "id": "wb-mr6c_22/K4",
+        "name": "Точечный",
+        "extra": {},
+        "type": "switch"
+      }
+    ],
+    "dimmers": [],
+    "key": "laundry",
+    "title": "🧺 Постирочная"
+  },
+  {
+    "name": "Детская гардеробная",
+    "lights": [
+      {
+        "id": "wb-mr6c_22/K5",
+        "name": "Точечный",
+        "extra": {},
+        "type": "switch"
+      }
+    ],
+    "dimmers": [],
+    "key": "wardrobe",
+    "title": "👕 Гардеробная"
+  }
+]

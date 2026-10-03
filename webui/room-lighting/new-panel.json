@@ -1,0 +1,22 @@
+{
+  "id": "dashboard_lighting",
+  "name": "Свет по комнатам",
+  "widgets": [
+    "widget_light_overview",
+    "widget_light_room_entryway",
+    "widget_light_room_hallway",
+    "widget_light_room_kitchen",
+    "widget_light_room_living_room",
+    "widget_light_room_bedroom",
+    "widget_light_room_child_yaroslav",
+    "widget_light_room_child_dima",
+    "widget_light_room_bathroom",
+    "widget_light_room_shower",
+    "widget_light_room_laundry",
+    "widget_light_room_wardrobe"
+  ],
+  "isSvg": false,
+  "options": {},
+  "chosen": false,
+  "selected": false
+}

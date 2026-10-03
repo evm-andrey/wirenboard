@@ -1,0 +1,524 @@
+[
+  {
+    "id": "widget_light_overview",
+    "name": "Освещение квартиры",
+    "description": "11 комнат · 42 группы света",
+    "compact": false,
+    "cells": [
+      {
+        "id": "ApartmentLightingMaster/summary_state",
+        "name": "Сейчас",
+        "type": "text",
+        "extra": {}
+      },
+      {
+        "id": "ApartmentLightingMaster/all_off_cmd",
+        "name": "Выключить весь свет",
+        "type": "pushbutton",
+        "extra": {}
+      }
+    ]
+  },
+  {
+    "id": "widget_light_room_entryway",
+    "name": "Прихожая",
+    "description": "",
+    "compact": false,
+    "cells": [
+      {
+        "id": "ApartmentLightingMaster/entryway_state",
+        "name": "Состояние",
+        "type": "text",
+        "extra": {}
+      },
+      {
+        "id": "wb-mr6c_111/K4",
+        "name": "Основной",
+        "type": "switch",
+        "extra": {}
+      },
+      {
+        "id": "wb-mr6c_111/K3",
+        "name": "Подсветка стены",
+        "type": "switch",
+        "extra": {}
+      },
+      {
+        "id": "wb-mr6c_22/K1",
+        "name": "Бра",
+        "type": "switch",
+        "extra": {}
+      },
+      {
+        "id": "ApartmentLightingMaster/entryway_off_cmd",
+        "name": "Выключить свет в комнате",
+        "type": "pushbutton",
+        "extra": {}
+      }
+    ]
+  },
+  {
+    "id": "widget_light_room_hallway",
+    "name": "Коридор",
+    "description": "",
+    "compact": false,
+    "cells": [
+      {
+        "id": "ApartmentLightingMaster/hallway_state",
+        "name": "Состояние",
+        "type": "text",
+        "extra": {}
+      },
+      {
+        "id": "wb-led_70/Channel 4",
+        "name": "Плинтус 1",
+        "type": "switch",
+        "extra": {}
+      },
+      {
+        "id": "wb-led_70/Channel 4 Brightness",
+        "name": "Яркость · Плинтус 1",
+        "type": "range",
+        "extra": {}
+      },
+      {
+        "id": "wb-led_70/Channel 3",
+        "name": "Плинтус 2",
+        "type": "switch",
+        "extra": {}
+      },
+      {
+        "id": "wb-led_70/Channel 3 Brightness",
+        "name": "Яркость · Плинтус 2",
+        "type": "range",
+        "extra": {}
+      },
+      {
+        "id": "wb-mr6c_108/K4",
+        "name": "Трек",
+        "type": "switch",
+        "extra": {}
+      },
+      {
+        "id": "ApartmentLightingMaster/hallway_off_cmd",
+        "name": "Выключить свет в комнате",
+        "type": "pushbutton",
+        "extra": {}
+      }
+    ]
+  },
+  {
+    "id": "widget_light_room_kitchen",
+    "name": "Кухня",
+    "description": "",
+    "compact": false,
+    "cells": [
+      {
+        "id": "ApartmentLightingMaster/kitchen_state",
+        "name": "Состояние",
+        "type": "text",
+        "extra": {}
+      },
+      {
+        "id": "wb-led_70/Channel 1",
+        "name": "Остров",
+        "type": "switch",
+        "extra": {}
+      },
+      {
+        "id": "wb-led_70/Channel 1 Brightness",
+        "name": "Яркость · Остров",
+        "type": "range",
+        "extra": {}
+      },
+      {
+        "id": "wb-mr6c_115/K2",
+        "name": "Трек",
+        "type": "switch",
+        "extra": {}
+      },
+      {
+        "id": "wb-led_70/Channel 2",
+        "name": "Шкаф",
+        "type": "switch",
+        "extra": {}
+      },
+      {
+        "id": "wb-led_70/Channel 2 Brightness",
+        "name": "Яркость · Шкаф",
+        "type": "range",
+        "extra": {}
+      },
+      {
+        "id": "wb-mr6c_115/K3",
+        "name": "Карниз",
+        "type": "switch",
+        "extra": {}
+      },
+      {
+        "id": "ApartmentLightingMaster/kitchen_off_cmd",
+        "name": "Выключить свет в комнате",
+        "type": "pushbutton",
+        "extra": {}
+      }
+    ]
+  },
+  {
+    "id": "widget_light_room_living_room",
+    "name": "Гостиная",
+    "description": "",
+    "compact": false,
+    "cells": [
+      {
+        "id": "ApartmentLightingMaster/living_room_state",
+        "name": "Состояние",
+        "type": "text",
+        "extra": {}
+      },
+      {
+        "id": "wb-mr6c_115/K1",
+        "name": "Карниз",
+        "type": "switch",
+        "extra": {}
+      },
+      {
+        "id": "wb-mr6c_22/K3",
+        "name": "Лоджия",
+        "type": "switch",
+        "extra": {}
+      },
+      {
+        "id": "wb-mr6c_111/K2",
+        "name": "Люстра",
+        "type": "switch",
+        "extra": {}
+      },
+      {
+        "id": "wb-mr6c_115/K4",
+        "name": "Трек",
+        "type": "switch",
+        "extra": {}
+      },
+      {
+        "id": "wb-mr6c_115/K6",
+        "name": "Бра правая",
+        "type": "switch",
+        "extra": {}
+      },
+      {
+        "id": "wb-mr6c_115/K5",
+        "name": "Бра левая",
+        "type": "switch",
+        "extra": {}
+      },
+      {
+        "id": "ApartmentLightingMaster/living_room_off_cmd",
+        "name": "Выключить свет в комнате",
+        "type": "pushbutton",
+        "extra": {}
+      }
+    ]
+  },
+  {
+    "id": "widget_light_room_bedroom",
+    "name": "Спальня",
+    "description": "",
+    "compact": false,
+    "cells": [
+      {
+        "id": "ApartmentLightingMaster/bedroom_state",
+        "name": "Состояние",
+        "type": "text",
+        "extra": {}
+      },
+      {
+        "id": "wb-mr6c_110/K1",
+        "name": "Ночник Правый",
+        "type": "switch",
+        "extra": {}
+      },
+      {
+        "id": "wb-mr6c_110/K2",
+        "name": "Ночник Левый",
+        "type": "switch",
+        "extra": {}
+      },
+      {
+        "id": "wb-mr6c_110/K4",
+        "name": "Гардеробная Правая",
+        "type": "switch",
+        "extra": {}
+      },
+      {
+        "id": "wb-mr6c_110/K5",
+        "name": "Гардеробная Левая",
+        "type": "switch",
+        "extra": {}
+      },
+      {
+        "id": "wb-mr6c_110/K6",
+        "name": "Бра",
+        "type": "switch",
+        "extra": {}
+      },
+      {
+        "id": "wb-mr6c_108/K6",
+        "name": "Лоджия Точечный",
+        "type": "switch",
+        "extra": {}
+      },
+      {
+        "id": "wb-mr6c_108/K5",
+        "name": "Лоджия Бра",
+        "type": "switch",
+        "extra": {}
+      },
+      {
+        "id": "wb-mr6c_22/K6",
+        "name": "Подсветка стены",
+        "type": "switch",
+        "extra": {}
+      },
+      {
+        "id": "wb-mr6c_110/K3",
+        "name": "Трек",
+        "type": "switch",
+        "extra": {}
+      },
+      {
+        "id": "ApartmentLightingMaster/bedroom_off_cmd",
+        "name": "Выключить свет в комнате",
+        "type": "pushbutton",
+        "extra": {}
+      }
+    ]
+  },
+  {
+    "id": "widget_light_room_child_yaroslav",
+    "name": "Детская · Ярослав",
+    "description": "",
+    "compact": false,
+    "cells": [
+      {
+        "id": "ApartmentLightingMaster/child_yaroslav_state",
+        "name": "Состояние",
+        "type": "text",
+        "extra": {}
+      },
+      {
+        "id": "wb-mr6c_102/K6",
+        "name": "Точечный",
+        "type": "switch",
+        "extra": {}
+      },
+      {
+        "id": "wb-mr6c_102/K4",
+        "name": "Бра",
+        "type": "switch",
+        "extra": {}
+      },
+      {
+        "id": "wb-mr6c_130/K1",
+        "name": "Led",
+        "type": "switch",
+        "extra": {}
+      },
+      {
+        "id": "wb-mr6c_130/K3",
+        "name": "Трек",
+        "type": "switch",
+        "extra": {}
+      },
+      {
+        "id": "wb-mr6c_102/K5",
+        "name": "У окна",
+        "type": "switch",
+        "extra": {}
+      },
+      {
+        "id": "ApartmentLightingMaster/child_yaroslav_off_cmd",
+        "name": "Выключить свет в комнате",
+        "type": "pushbutton",
+        "extra": {}
+      }
+    ]
+  },
+  {
+    "id": "widget_light_room_child_dima",
+    "name": "Детская · Дима",
+    "description": "",
+    "compact": false,
+    "cells": [
+      {
+        "id": "ApartmentLightingMaster/child_dima_state",
+        "name": "Состояние",
+        "type": "text",
+        "extra": {}
+      },
+      {
+        "id": "wb-mr6c_102/K3",
+        "name": "Точечный",
+        "type": "switch",
+        "extra": {}
+      },
+      {
+        "id": "wb-mr6c_102/K1",
+        "name": "Бра",
+        "type": "switch",
+        "extra": {}
+      },
+      {
+        "id": "wb-mr6c_102/K2",
+        "name": "Трек",
+        "type": "switch",
+        "extra": {}
+      },
+      {
+        "id": "wb-mr6c_22/K2",
+        "name": "Led",
+        "type": "switch",
+        "extra": {}
+      },
+      {
+        "id": "wb-mr6c_130/K2",
+        "name": "У окна",
+        "type": "switch",
+        "extra": {}
+      },
+      {
+        "id": "ApartmentLightingMaster/child_dima_off_cmd",
+        "name": "Выключить свет в комнате",
+        "type": "pushbutton",
+        "extra": {}
+      }
+    ]
+  },
+  {
+    "id": "widget_light_room_bathroom",
+    "name": "Ванная",
+    "description": "",
+    "compact": false,
+    "cells": [
+      {
+        "id": "ApartmentLightingMaster/bathroom_state",
+        "name": "Состояние",
+        "type": "text",
+        "extra": {}
+      },
+      {
+        "id": "wb-mr6c_130/K5",
+        "name": "Бра",
+        "type": "switch",
+        "extra": {}
+      },
+      {
+        "id": "wb-mr6c_130/K6",
+        "name": "Точечный",
+        "type": "switch",
+        "extra": {}
+      },
+      {
+        "id": "wb-mr6c_111/K1",
+        "name": "Подсветка",
+        "type": "switch",
+        "extra": {}
+      },
+      {
+        "id": "ApartmentLightingMaster/bathroom_off_cmd",
+        "name": "Выключить свет в комнате",
+        "type": "pushbutton",
+        "extra": {}
+      }
+    ]
+  },
+  {
+    "id": "widget_light_room_shower",
+    "name": "Душевая",
+    "description": "",
+    "compact": false,
+    "cells": [
+      {
+        "id": "ApartmentLightingMaster/shower_state",
+        "name": "Состояние",
+        "type": "text",
+        "extra": {}
+      },
+      {
+        "id": "wb-mr6c_108/K3",
+        "name": "Бра",
+        "type": "switch",
+        "extra": {}
+      },
+      {
+        "id": "wb-led_29/Channels 1_2_3_4",
+        "name": "Основное",
+        "type": "switch",
+        "extra": {}
+      },
+      {
+        "id": "wb-led_29/Channels 1_2_3_4 Brightness",
+        "name": "Яркость · Основное",
+        "type": "range",
+        "extra": {}
+      },
+      {
+        "id": "ApartmentLightingMaster/shower_off_cmd",
+        "name": "Выключить свет в комнате",
+        "type": "pushbutton",
+        "extra": {}
+      }
+    ]
+  },
+  {
+    "id": "widget_light_room_laundry",
+    "name": "Постирочная",
+    "description": "",
+    "compact": false,
+    "cells": [
+      {
+        "id": "ApartmentLightingMaster/laundry_state",
+        "name": "Состояние",
+        "type": "text",
+        "extra": {}
+      },
+      {
+        "id": "wb-mr6c_22/K4",
+        "name": "Точечный",
+        "type": "switch",
+        "extra": {}
+      },
+      {
+        "id": "ApartmentLightingMaster/laundry_off_cmd",
+        "name": "Выключить свет в комнате",
+        "type": "pushbutton",
+        "extra": {}
+      }
+    ]
+  },
+  {
+    "id": "widget_light_room_wardrobe",
+    "name": "Гардеробная",
+    "description": "",
+    "compact": false,
+    "cells": [
+      {
+        "id": "ApartmentLightingMaster/wardrobe_state",
+        "name": "Состояние",
+        "type": "text",
+        "extra": {}
+      },
+      {
+        "id": "wb-mr6c_22/K5",
+        "name": "Точечный",
+        "type": "switch",
+        "extra": {}
+      },
+      {
+        "id": "ApartmentLightingMaster/wardrobe_off_cmd",
+        "name": "Выключить свет в комнате",
+        "type": "pushbutton",
+        "extra": {}
+      }
+    ]
+  }
+]

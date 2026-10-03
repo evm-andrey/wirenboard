@@ -1,0 +1,77 @@
+/* Scoped native WB room-lighting theme. No control logic. */
+.room-light-dashboard body, .room-light-dashboard .page { background: #f3f6fa; }
+.room-light-dashboard .page { color: #253247; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+.room-light-dashboard .page-title { font-size: 28px; font-weight: 750; letter-spacing: -.6px; color: #18283f; }
+.room-light-dashboard .columnsWrapper-container { display: grid !important; grid-template-columns: repeat(auto-fit, minmax(min(100%, 310px), 1fr)); gap: 20px; align-items: start; padding-bottom: 32px; }
+.room-light-dashboard .columnsWrapper-column { display: contents !important; }
+.room-light-dashboard .card { margin: 0 !important; border: 1px solid #dfe7ef; border-radius: 18px; overflow: hidden; background: white; box-shadow: 0 4px 18px rgba(27,45,74,.055); }
+.room-light-dashboard .card-header { background: white; color: #223149; padding: 18px 20px; border-bottom: 1px solid #edf1f6; }
+.room-light-dashboard .card-title { font-size: 18px; font-weight: 700; }
+.room-light-dashboard .card-body { padding: 12px 20px 18px; }
+.room-light-dashboard .deviceCell { min-height: 43px; gap: 12px; }
+.room-light-dashboard .deviceCell-name { color: #334155; font-size: 14px; }
+.room-light-dashboard .deviceCell-historyLink, .room-light-dashboard a[href^="#!/history"] { display: none; }
+.room-light-dashboard .card-body > .deviceCell:first-child { padding-bottom: 12px; margin-bottom: 5px; border-bottom: 1px solid #f0f3f7; }
+.room-light-dashboard .card-body > .deviceCell:first-child .deviceCell-name { display: none; }
+.room-light-dashboard .card-body > .deviceCell:first-child .deviceCell-text { display: inline-block; border-radius: 8px; padding: 5px 9px; font-size: 12px; font-weight: 600; background: #edf7f1; color: #267044; }
+.room-light-dashboard .card[data-light-status="on"] .deviceCell-text, .room-light-dashboard .card[data-light-status="unknown"] .deviceCell-text { background: #fff5df; color: #976414; }
+.room-light-dashboard .card[data-light-status="on"] { border-top: 3px solid #f1c269; }
+.room-light-dashboard .button { border-radius: 10px; min-height: 42px; font-size: 13px; font-weight: 600; }
+.room-light-dashboard .card:not(#widget_light_overview) .card-body > .deviceCell:last-child { margin-top: 10px; }
+.room-light-dashboard .card:not(#widget_light_overview) .card-body > .deviceCell:last-child .button { width: 100%; background: #eef3f9; border-color: #e2eaf4; color: #435a78; }
+.room-light-dashboard .card:not(#widget_light_overview) .card-body > .deviceCell:last-child .button:hover { background: #e3ecf8; }
+.room-light-dashboard #widget_light_overview { grid-column: 1 / -1; order: 0; color: white; background: linear-gradient(115deg, #172c49, #2b4c74); border: 0; }
+.room-light-dashboard #widget_light_overview .card-header { color: white; background: transparent; border: 0; padding-bottom: 4px; }
+.room-light-dashboard #widget_light_overview .card-title { font-size: 22px; }
+.room-light-dashboard #widget_light_overview .card-body { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px; padding-top: 4px; padding-bottom: 20px; }
+.room-light-dashboard #widget_light_overview .deviceCell { border: 0; margin: 0; padding: 0; }
+.room-light-dashboard #widget_light_overview .deviceCell-text { background: rgba(255,255,255,.10); color: #dce9f7; font-size: 14px; padding: 8px 12px; }
+.room-light-dashboard #widget_light_overview .button { background: #fff1df; border: 0; color: #7b441e; padding: 11px 22px; min-height: 46px; }
+.room-light-dashboard #widget_light_overview .button:hover { background: #ffe4c1; }
+.room-light-dashboard #widget_light_room_entryway { order: 1; }
+.room-light-dashboard #widget_light_room_hallway { order: 2; }
+.room-light-dashboard #widget_light_room_kitchen { order: 3; }
+.room-light-dashboard #widget_light_room_living_room { order: 4; }
+.room-light-dashboard #widget_light_room_bedroom { order: 5; }
+.room-light-dashboard #widget_light_room_child_yaroslav { order: 6; }
+.room-light-dashboard #widget_light_room_child_dima { order: 7; }
+.room-light-dashboard #widget_light_room_bathroom { order: 8; }
+.room-light-dashboard #widget_light_room_shower { order: 9; }
+.room-light-dashboard #widget_light_room_laundry { order: 10; }
+.room-light-dashboard #widget_light_room_wardrobe { order: 11; }
+@media (max-width: 700px) {
+  .room-light-dashboard .columnsWrapper-container { gap: 14px; grid-template-columns: minmax(0,1fr); }
+  .room-light-dashboard .page-title { font-size: 23px; }
+  .room-light-dashboard .card-header { padding: 16px 17px; }
+  .room-light-dashboard .card-body { padding-left: 17px; padding-right: 17px; }
+  .room-light-dashboard #widget_light_overview .card-body { display: block; }
+  .room-light-dashboard #widget_light_overview .deviceCell:last-child { margin-top: 12px; }
+  .room-light-dashboard #widget_light_overview .button { width: 100%; }
+}
+
+/* Override native card maximum width and primary-header specificity. */
+.room-light-dashboard .card.card-primary { width: 100%; max-width: none; }
+.room-light-dashboard .card.card-primary > .card-header { background: #fff; color: #223149; }
+.room-light-dashboard #widget_light_overview.card.card-primary > .card-header { color: #fff; background: transparent; }
+.room-light-dashboard #widget_light_overview .card-body { background: transparent; color: #fff; }
+.room-light-dashboard .card-title { display: flex; align-items: center; gap: 11px; }
+.room-light-dashboard .card-title::before, .room-light-dashboard .page-title::before { content: ""; display: inline-block; width: 23px; height: 23px; flex: 0 0 23px; background: currentColor; mask-size: contain; mask-position: center; mask-repeat: no-repeat; }
+.room-light-dashboard .page-title::before { vertical-align: -3px; margin-right: 12px; }
+.room-light-dashboard .page-title::before, .room-light-dashboard #widget_light_overview .card-title::before { mask-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.7%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M9%2018h6M10%2021h4M8%2014a6%206%200%201%201%208%200c-1%201-1%202-1%202H9s0-1-1-2Z%22%2F%3E%3C%2Fsvg%3E"); }
+.room-light-dashboard #widget_light_room_entryway .card-title::before { mask-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.7%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M5%2021V3h13v18M2%2021h20M14%2012h1%22%2F%3E%3C%2Fsvg%3E"); }
+.room-light-dashboard #widget_light_room_hallway .card-title::before { mask-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.7%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M6%204h5a5%205%200%200%201%200%2010H8a4%204%200%200%200%200%208h10M4%204h0M18%2022h0%22%2F%3E%3Ccircle%20cx%3D%224%22%20cy%3D%224%22%20r%3D%222%22%2F%3E%3C%2Fsvg%3E"); }
+.room-light-dashboard #widget_light_room_kitchen .card-title::before { mask-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.7%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M5%203v6a3%203%200%200%200%206%200V3M8%203v19M19%2022V3c-5%204-5%2010%200%2010%22%2F%3E%3C%2Fsvg%3E"); }
+.room-light-dashboard #widget_light_room_living_room .card-title::before { mask-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.7%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M5%2011V6a3%203%200%200%201%203-3h8a3%203%200%200%201%203%203v5M3%209v9h18V9M3%2013h18M6%2018v3M18%2018v3%22%2F%3E%3C%2Fsvg%3E"); }
+.room-light-dashboard #widget_light_room_bedroom .card-title::before { mask-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.7%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M3%2018V5M3%2010h15a3%203%200%200%201%203%203v5M3%2016h18M21%2018v3M3%2018v3%22%2F%3E%3Crect%20x%3D%226%22%20y%3D%226%22%20width%3D%225%22%20height%3D%224%22%20rx%3D%221%22%2F%3E%3C%2Fsvg%3E"); }
+.room-light-dashboard #widget_light_room_child_yaroslav .card-title::before { mask-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.7%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22m12%203%203%206%206%201-4%205%201%206-6-3-6%203%201-6-4-5%206-1Z%22%2F%3E%3C%2Fsvg%3E"); }
+.room-light-dashboard #widget_light_room_child_dima .card-title::before { mask-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.7%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22m12%203%203%206%206%201-4%205%201%206-6-3-6%203%201-6-4-5%206-1Z%22%2F%3E%3C%2Fsvg%3E"); }
+.room-light-dashboard #widget_light_room_bathroom .card-title::before { mask-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.7%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M3%2012h18v3a5%205%200%200%201-5%205H8a5%205%200%200%201-5-5ZM6%2012V5a2%202%200%200%201%204%200M5%2020v2M19%2020v2%22%2F%3E%3C%2Fsvg%3E"); }
+.room-light-dashboard #widget_light_room_shower .card-title::before { mask-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.7%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M5%208a7%207%200%200%201%2014%200ZM7%2012v2M12%2012v2M17%2012v2M7%2018v2M12%2018v2M17%2018v2%22%2F%3E%3C%2Fsvg%3E"); }
+.room-light-dashboard #widget_light_room_laundry .card-title::before { mask-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.7%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Crect%20x%3D%224%22%20y%3D%222%22%20width%3D%2216%22%20height%3D%2220%22%20rx%3D%222%22%2F%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2214%22%20r%3D%225%22%2F%3E%3Cpath%20d%3D%22M7%206h1M11%206h1M7%2014c3-3%207%203%2010%200%22%2F%3E%3C%2Fsvg%3E"); }
+.room-light-dashboard #widget_light_room_wardrobe .card-title::before { mask-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.7%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M10%206a2%202%200%201%201%204%200c0%202-2%202-2%204L3%2017h18l-9-7%22%2F%3E%3C%2Fsvg%3E"); }
+.room-light-dashboard .toggle-switchy { display: inline-flex; align-items: center; justify-content: flex-end; min-width: 54px; min-height: 44px; cursor: pointer; }
+.room-light-dashboard .toggle-switchy .toggle { transform: scale(1.25); transform-origin: right center; }
+.room-light-dashboard .card-body > .deviceCell:first-child .deviceCell-textWrapper { width: auto; margin-left: 0; justify-content: flex-start; }
+.room-light-dashboard #widget_light_overview .deviceCell:first-child { flex: 1 1 240px; width: auto; }
+.room-light-dashboard #widget_light_overview .deviceCell:last-child { flex: 0 0 auto; width: auto; }
+@media (max-width: 700px) { .room-light-dashboard #widget_light_overview .deviceCell:last-child { width: 100%; } }
