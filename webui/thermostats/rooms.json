@@ -1,0 +1,27 @@
+[
+  [
+    "bedroom",
+    "Спальня",
+    "WB_thermostat_bedroom"
+  ],
+  [
+    "shower",
+    "Душевая",
+    "WB_thermostat_shower_room"
+  ],
+  [
+    "corridor",
+    "Коридор",
+    "WB_thermostat_hallway"
+  ],
+  [
+    "bathroom",
+    "Ванная",
+    "WB_thermostat_bathroom"
+  ],
+  [
+    "livingroom",
+    "Гостиная",
+    "WB_thermostat_living_room"
+  ]
+]

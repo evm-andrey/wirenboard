@@ -1,0 +1,1282 @@
+{
+  "svg": {
+    "original": {},
+    "current": "<svg id=\"wb-thermostat-dashboard\" width=\"1080\" height=\"1024\" viewBox=\"0 0 1080 1024\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Термостаты по комнатам\">\n<style>\n#wb-thermostat-dashboard text { font-family: system-ui, -apple-system, 'Segoe UI', sans-serif; fill:#253247; }\n#wb-thermostat-dashboard .muted { fill:#64748b; font-size:13px; }\n#wb-thermostat-dashboard .title { font-size:20px; font-weight:700; }\n#wb-thermostat-dashboard .control { cursor:pointer; stroke-width:1; transition:stroke .15s; }\n#wb-thermostat-dashboard .control:hover { stroke:#338ad0; stroke-width:2; }\n#wb-thermostat-dashboard .control:focus { outline:none; stroke:#2563eb; stroke-width:3; }\n#wb-thermostat-dashboard .button-label { pointer-events:none; font-size:15px; font-weight:650; }\n</style>\n<rect id=\"thermostat-page-bg\" width=\"100%\" height=\"100%\" fill=\"#f3f6fa\"/>\n<rect id=\"thermostat-hero\" x=\"12\" y=\"12\" width=\"1056\" height=\"106\" rx=\"18\" fill=\"#203b5e\"/>\n<text x=\"32\" y=\"52\" style=\"fill:white;font-size:25px;font-weight:750\">Климат по комнатам</text>\n<text x=\"32\" y=\"82\" style=\"fill:#dce9f7;font-size:14px\">5 термостатов · управление тёплым полом</text>\n<g id=\"thermostat-bedroom-card\" data-thermostat-card=\"0\" transform=\"translate(12,138)\">\n<rect width=\"336\" height=\"410\" rx=\"18\" fill=\"white\" stroke=\"#dfe7ef\"/>\n<text x=\"20\" y=\"37\" class=\"title\">Спальня</text>\n<path d=\"M20 55H316\" stroke=\"#edf1f6\"/>\n<text id=\"thermostat-bedroom-temperature\" x=\"20\" y=\"111\" style=\"font-size:39px;font-weight:750\">Нет данных</text>\n<text id=\"thermostat-bedroom-sensor-label\" x=\"20\" y=\"135\" class=\"muted\">Датчик термостата</text>\n<rect id=\"thermostat-bedroom-state-bg\" x=\"184\" y=\"81\" width=\"132\" height=\"32\" rx=\"9\" fill=\"#edf7f1\"/>\n<text id=\"thermostat-bedroom-state\" x=\"250\" y=\"102\" text-anchor=\"middle\" style=\"font-size:12px;font-weight:650\">Нет данных</text>\n<text x=\"20\" y=\"167\" class=\"muted\">Уставка устройства</text>\n<text id=\"thermostat-bedroom-setpoint\" x=\"316\" y=\"167\" text-anchor=\"end\" style=\"font-size:17px;font-weight:700\">Нет данных</text>\n<text x=\"20\" y=\"200\" class=\"muted\">Задать температуру · 20–30 °C</text>\n<rect id=\"thermostat-bedroom-set-20\" class=\"control\" x=\"15\" y=\"218\" width=\"46\" height=\"44\" rx=\"10\" fill=\"#eef3f9\" stroke=\"#dfe7ef\" role=\"button\" tabindex=\"0\" aria-label=\"Спальня: задать 20 градусов\"><title>Задать 20 °C</title></rect>\n<text x=\"38\" y=\"246\" text-anchor=\"middle\" class=\"button-label\">20</text>\n<rect id=\"thermostat-bedroom-set-21\" class=\"control\" x=\"67\" y=\"218\" width=\"46\" height=\"44\" rx=\"10\" fill=\"#eef3f9\" stroke=\"#dfe7ef\" role=\"button\" tabindex=\"0\" aria-label=\"Спальня: задать 21 градусов\"><title>Задать 21 °C</title></rect>\n<text x=\"90\" y=\"246\" text-anchor=\"middle\" class=\"button-label\">21</text>\n<rect id=\"thermostat-bedroom-set-22\" class=\"control\" x=\"119\" y=\"218\" width=\"46\" height=\"44\" rx=\"10\" fill=\"#eef3f9\" stroke=\"#dfe7ef\" role=\"button\" tabindex=\"0\" aria-label=\"Спальня: задать 22 градусов\"><title>Задать 22 °C</title></rect>\n<text x=\"142\" y=\"246\" text-anchor=\"middle\" class=\"button-label\">22</text>\n<rect id=\"thermostat-bedroom-set-23\" class=\"control\" x=\"171\" y=\"218\" width=\"46\" height=\"44\" rx=\"10\" fill=\"#eef3f9\" stroke=\"#dfe7ef\" role=\"button\" tabindex=\"0\" aria-label=\"Спальня: задать 23 градусов\"><title>Задать 23 °C</title></rect>\n<text x=\"194\" y=\"246\" text-anchor=\"middle\" class=\"button-label\">23</text>\n<rect id=\"thermostat-bedroom-set-24\" class=\"control\" x=\"223\" y=\"218\" width=\"46\" height=\"44\" rx=\"10\" fill=\"#eef3f9\" stroke=\"#dfe7ef\" role=\"button\" tabindex=\"0\" aria-label=\"Спальня: задать 24 градусов\"><title>Задать 24 °C</title></rect>\n<text x=\"246\" y=\"246\" text-anchor=\"middle\" class=\"button-label\">24</text>\n<rect id=\"thermostat-bedroom-set-25\" class=\"control\" x=\"275\" y=\"218\" width=\"46\" height=\"44\" rx=\"10\" fill=\"#eef3f9\" stroke=\"#dfe7ef\" role=\"button\" tabindex=\"0\" aria-label=\"Спальня: задать 25 градусов\"><title>Задать 25 °C</title></rect>\n<text x=\"298\" y=\"246\" text-anchor=\"middle\" class=\"button-label\">25</text>\n<rect id=\"thermostat-bedroom-set-26\" class=\"control\" x=\"15\" y=\"272\" width=\"46\" height=\"44\" rx=\"10\" fill=\"#eef3f9\" stroke=\"#dfe7ef\" role=\"button\" tabindex=\"0\" aria-label=\"Спальня: задать 26 градусов\"><title>Задать 26 °C</title></rect>\n<text x=\"38\" y=\"300\" text-anchor=\"middle\" class=\"button-label\">26</text>\n<rect id=\"thermostat-bedroom-set-27\" class=\"control\" x=\"67\" y=\"272\" width=\"46\" height=\"44\" rx=\"10\" fill=\"#eef3f9\" stroke=\"#dfe7ef\" role=\"button\" tabindex=\"0\" aria-label=\"Спальня: задать 27 градусов\"><title>Задать 27 °C</title></rect>\n<text x=\"90\" y=\"300\" text-anchor=\"middle\" class=\"button-label\">27</text>\n<rect id=\"thermostat-bedroom-set-28\" class=\"control\" x=\"119\" y=\"272\" width=\"46\" height=\"44\" rx=\"10\" fill=\"#eef3f9\" stroke=\"#dfe7ef\" role=\"button\" tabindex=\"0\" aria-label=\"Спальня: задать 28 градусов\"><title>Задать 28 °C</title></rect>\n<text x=\"142\" y=\"300\" text-anchor=\"middle\" class=\"button-label\">28</text>\n<rect id=\"thermostat-bedroom-set-29\" class=\"control\" x=\"171\" y=\"272\" width=\"46\" height=\"44\" rx=\"10\" fill=\"#eef3f9\" stroke=\"#dfe7ef\" role=\"button\" tabindex=\"0\" aria-label=\"Спальня: задать 29 градусов\"><title>Задать 29 °C</title></rect>\n<text x=\"194\" y=\"300\" text-anchor=\"middle\" class=\"button-label\">29</text>\n<rect id=\"thermostat-bedroom-set-30\" class=\"control\" x=\"223\" y=\"272\" width=\"46\" height=\"44\" rx=\"10\" fill=\"#eef3f9\" stroke=\"#dfe7ef\" role=\"button\" tabindex=\"0\" aria-label=\"Спальня: задать 30 градусов\"><title>Задать 30 °C</title></rect>\n<text x=\"246\" y=\"300\" text-anchor=\"middle\" class=\"button-label\">30</text>\n<rect id=\"thermostat-bedroom-mode\" class=\"control\" x=\"16\" y=\"345\" width=\"304\" height=\"46\" rx=\"11\" fill=\"#eef3f9\" stroke=\"#dfe7ef\" role=\"button\" tabindex=\"0\" aria-label=\"Спальня: включить или выключить отопление\"><title>Переключить режим отопления</title></rect>\n<text id=\"thermostat-bedroom-mode-label\" x=\"168\" y=\"374\" text-anchor=\"middle\" class=\"button-label\" style=\"font-size:14px\">Нет данных</text>\n</g>\n<g id=\"thermostat-shower-card\" data-thermostat-card=\"1\" transform=\"translate(368,138)\">\n<rect width=\"336\" height=\"410\" rx=\"18\" fill=\"white\" stroke=\"#dfe7ef\"/>\n<text x=\"20\" y=\"37\" class=\"title\">Душевая</text>\n<path d=\"M20 55H316\" stroke=\"#edf1f6\"/>\n<text id=\"thermostat-shower-temperature\" x=\"20\" y=\"111\" style=\"font-size:39px;font-weight:750\">Нет данных</text>\n<text id=\"thermostat-shower-sensor-label\" x=\"20\" y=\"135\" class=\"muted\">Датчик термостата</text>\n<rect id=\"thermostat-shower-state-bg\" x=\"184\" y=\"81\" width=\"132\" height=\"32\" rx=\"9\" fill=\"#edf7f1\"/>\n<text id=\"thermostat-shower-state\" x=\"250\" y=\"102\" text-anchor=\"middle\" style=\"font-size:12px;font-weight:650\">Нет данных</text>\n<text x=\"20\" y=\"167\" class=\"muted\">Уставка устройства</text>\n<text id=\"thermostat-shower-setpoint\" x=\"316\" y=\"167\" text-anchor=\"end\" style=\"font-size:17px;font-weight:700\">Нет данных</text>\n<text x=\"20\" y=\"200\" class=\"muted\">Задать температуру · 20–30 °C</text>\n<rect id=\"thermostat-shower-set-20\" class=\"control\" x=\"15\" y=\"218\" width=\"46\" height=\"44\" rx=\"10\" fill=\"#eef3f9\" stroke=\"#dfe7ef\" role=\"button\" tabindex=\"0\" aria-label=\"Душевая: задать 20 градусов\"><title>Задать 20 °C</title></rect>\n<text x=\"38\" y=\"246\" text-anchor=\"middle\" class=\"button-label\">20</text>\n<rect id=\"thermostat-shower-set-21\" class=\"control\" x=\"67\" y=\"218\" width=\"46\" height=\"44\" rx=\"10\" fill=\"#eef3f9\" stroke=\"#dfe7ef\" role=\"button\" tabindex=\"0\" aria-label=\"Душевая: задать 21 градусов\"><title>Задать 21 °C</title></rect>\n<text x=\"90\" y=\"246\" text-anchor=\"middle\" class=\"button-label\">21</text>\n<rect id=\"thermostat-shower-set-22\" class=\"control\" x=\"119\" y=\"218\" width=\"46\" height=\"44\" rx=\"10\" fill=\"#eef3f9\" stroke=\"#dfe7ef\" role=\"button\" tabindex=\"0\" aria-label=\"Душевая: задать 22 градусов\"><title>Задать 22 °C</title></rect>\n<text x=\"142\" y=\"246\" text-anchor=\"middle\" class=\"button-label\">22</text>\n<rect id=\"thermostat-shower-set-23\" class=\"control\" x=\"171\" y=\"218\" width=\"46\" height=\"44\" rx=\"10\" fill=\"#eef3f9\" stroke=\"#dfe7ef\" role=\"button\" tabindex=\"0\" aria-label=\"Душевая: задать 23 градусов\"><title>Задать 23 °C</title></rect>\n<text x=\"194\" y=\"246\" text-anchor=\"middle\" class=\"button-label\">23</text>\n<rect id=\"thermostat-shower-set-24\" class=\"control\" x=\"223\" y=\"218\" width=\"46\" height=\"44\" rx=\"10\" fill=\"#eef3f9\" stroke=\"#dfe7ef\" role=\"button\" tabindex=\"0\" aria-label=\"Душевая: задать 24 градусов\"><title>Задать 24 °C</title></rect>\n<text x=\"246\" y=\"246\" text-anchor=\"middle\" class=\"button-label\">24</text>\n<rect id=\"thermostat-shower-set-25\" class=\"control\" x=\"275\" y=\"218\" width=\"46\" height=\"44\" rx=\"10\" fill=\"#eef3f9\" stroke=\"#dfe7ef\" role=\"button\" tabindex=\"0\" aria-label=\"Душевая: задать 25 градусов\"><title>Задать 25 °C</title></rect>\n<text x=\"298\" y=\"246\" text-anchor=\"middle\" class=\"button-label\">25</text>\n<rect id=\"thermostat-shower-set-26\" class=\"control\" x=\"15\" y=\"272\" width=\"46\" height=\"44\" rx=\"10\" fill=\"#eef3f9\" stroke=\"#dfe7ef\" role=\"button\" tabindex=\"0\" aria-label=\"Душевая: задать 26 градусов\"><title>Задать 26 °C</title></rect>\n<text x=\"38\" y=\"300\" text-anchor=\"middle\" class=\"button-label\">26</text>\n<rect id=\"thermostat-shower-set-27\" class=\"control\" x=\"67\" y=\"272\" width=\"46\" height=\"44\" rx=\"10\" fill=\"#eef3f9\" stroke=\"#dfe7ef\" role=\"button\" tabindex=\"0\" aria-label=\"Душевая: задать 27 градусов\"><title>Задать 27 °C</title></rect>\n<text x=\"90\" y=\"300\" text-anchor=\"middle\" class=\"button-label\">27</text>\n<rect id=\"thermostat-shower-set-28\" class=\"control\" x=\"119\" y=\"272\" width=\"46\" height=\"44\" rx=\"10\" fill=\"#eef3f9\" stroke=\"#dfe7ef\" role=\"button\" tabindex=\"0\" aria-label=\"Душевая: задать 28 градусов\"><title>Задать 28 °C</title></rect>\n<text x=\"142\" y=\"300\" text-anchor=\"middle\" class=\"button-label\">28</text>\n<rect id=\"thermostat-shower-set-29\" class=\"control\" x=\"171\" y=\"272\" width=\"46\" height=\"44\" rx=\"10\" fill=\"#eef3f9\" stroke=\"#dfe7ef\" role=\"button\" tabindex=\"0\" aria-label=\"Душевая: задать 29 градусов\"><title>Задать 29 °C</title></rect>\n<text x=\"194\" y=\"300\" text-anchor=\"middle\" class=\"button-label\">29</text>\n<rect id=\"thermostat-shower-set-30\" class=\"control\" x=\"223\" y=\"272\" width=\"46\" height=\"44\" rx=\"10\" fill=\"#eef3f9\" stroke=\"#dfe7ef\" role=\"button\" tabindex=\"0\" aria-label=\"Душевая: задать 30 градусов\"><title>Задать 30 °C</title></rect>\n<text x=\"246\" y=\"300\" text-anchor=\"middle\" class=\"button-label\">30</text>\n<rect id=\"thermostat-shower-mode\" class=\"control\" x=\"16\" y=\"345\" width=\"304\" height=\"46\" rx=\"11\" fill=\"#eef3f9\" stroke=\"#dfe7ef\" role=\"button\" tabindex=\"0\" aria-label=\"Душевая: включить или выключить отопление\"><title>Переключить режим отопления</title></rect>\n<text id=\"thermostat-shower-mode-label\" x=\"168\" y=\"374\" text-anchor=\"middle\" class=\"button-label\" style=\"font-size:14px\">Нет данных</text>\n</g>\n<g id=\"thermostat-corridor-card\" data-thermostat-card=\"2\" transform=\"translate(724,138)\">\n<rect width=\"336\" height=\"410\" rx=\"18\" fill=\"white\" stroke=\"#dfe7ef\"/>\n<text x=\"20\" y=\"37\" class=\"title\">Коридор</text>\n<path d=\"M20 55H316\" stroke=\"#edf1f6\"/>\n<text id=\"thermostat-corridor-temperature\" x=\"20\" y=\"111\" style=\"font-size:39px;font-weight:750\">Нет данных</text>\n<text id=\"thermostat-corridor-sensor-label\" x=\"20\" y=\"135\" class=\"muted\">Датчик термостата</text>\n<rect id=\"thermostat-corridor-state-bg\" x=\"184\" y=\"81\" width=\"132\" height=\"32\" rx=\"9\" fill=\"#edf7f1\"/>\n<text id=\"thermostat-corridor-state\" x=\"250\" y=\"102\" text-anchor=\"middle\" style=\"font-size:12px;font-weight:650\">Нет данных</text>\n<text x=\"20\" y=\"167\" class=\"muted\">Уставка устройства</text>\n<text id=\"thermostat-corridor-setpoint\" x=\"316\" y=\"167\" text-anchor=\"end\" style=\"font-size:17px;font-weight:700\">Нет данных</text>\n<text x=\"20\" y=\"200\" class=\"muted\">Задать температуру · 20–30 °C</text>\n<rect id=\"thermostat-corridor-set-20\" class=\"control\" x=\"15\" y=\"218\" width=\"46\" height=\"44\" rx=\"10\" fill=\"#eef3f9\" stroke=\"#dfe7ef\" role=\"button\" tabindex=\"0\" aria-label=\"Коридор: задать 20 градусов\"><title>Задать 20 °C</title></rect>\n<text x=\"38\" y=\"246\" text-anchor=\"middle\" class=\"button-label\">20</text>\n<rect id=\"thermostat-corridor-set-21\" class=\"control\" x=\"67\" y=\"218\" width=\"46\" height=\"44\" rx=\"10\" fill=\"#eef3f9\" stroke=\"#dfe7ef\" role=\"button\" tabindex=\"0\" aria-label=\"Коридор: задать 21 градусов\"><title>Задать 21 °C</title></rect>\n<text x=\"90\" y=\"246\" text-anchor=\"middle\" class=\"button-label\">21</text>\n<rect id=\"thermostat-corridor-set-22\" class=\"control\" x=\"119\" y=\"218\" width=\"46\" height=\"44\" rx=\"10\" fill=\"#eef3f9\" stroke=\"#dfe7ef\" role=\"button\" tabindex=\"0\" aria-label=\"Коридор: задать 22 градусов\"><title>Задать 22 °C</title></rect>\n<text x=\"142\" y=\"246\" text-anchor=\"middle\" class=\"button-label\">22</text>\n<rect id=\"thermostat-corridor-set-23\" class=\"control\" x=\"171\" y=\"218\" width=\"46\" height=\"44\" rx=\"10\" fill=\"#eef3f9\" stroke=\"#dfe7ef\" role=\"button\" tabindex=\"0\" aria-label=\"Коридор: задать 23 градусов\"><title>Задать 23 °C</title></rect>\n<text x=\"194\" y=\"246\" text-anchor=\"middle\" class=\"button-label\">23</text>\n<rect id=\"thermostat-corridor-set-24\" class=\"control\" x=\"223\" y=\"218\" width=\"46\" height=\"44\" rx=\"10\" fill=\"#eef3f9\" stroke=\"#dfe7ef\" role=\"button\" tabindex=\"0\" aria-label=\"Коридор: задать 24 градусов\"><title>Задать 24 °C</title></rect>\n<text x=\"246\" y=\"246\" text-anchor=\"middle\" class=\"button-label\">24</text>\n<rect id=\"thermostat-corridor-set-25\" class=\"control\" x=\"275\" y=\"218\" width=\"46\" height=\"44\" rx=\"10\" fill=\"#eef3f9\" stroke=\"#dfe7ef\" role=\"button\" tabindex=\"0\" aria-label=\"Коридор: задать 25 градусов\"><title>Задать 25 °C</title></rect>\n<text x=\"298\" y=\"246\" text-anchor=\"middle\" class=\"button-label\">25</text>\n<rect id=\"thermostat-corridor-set-26\" class=\"control\" x=\"15\" y=\"272\" width=\"46\" height=\"44\" rx=\"10\" fill=\"#eef3f9\" stroke=\"#dfe7ef\" role=\"button\" tabindex=\"0\" aria-label=\"Коридор: задать 26 градусов\"><title>Задать 26 °C</title></rect>\n<text x=\"38\" y=\"300\" text-anchor=\"middle\" class=\"button-label\">26</text>\n<rect id=\"thermostat-corridor-set-27\" class=\"control\" x=\"67\" y=\"272\" width=\"46\" height=\"44\" rx=\"10\" fill=\"#eef3f9\" stroke=\"#dfe7ef\" role=\"button\" tabindex=\"0\" aria-label=\"Коридор: задать 27 градусов\"><title>Задать 27 °C</title></rect>\n<text x=\"90\" y=\"300\" text-anchor=\"middle\" class=\"button-label\">27</text>\n<rect id=\"thermostat-corridor-set-28\" class=\"control\" x=\"119\" y=\"272\" width=\"46\" height=\"44\" rx=\"10\" fill=\"#eef3f9\" stroke=\"#dfe7ef\" role=\"button\" tabindex=\"0\" aria-label=\"Коридор: задать 28 градусов\"><title>Задать 28 °C</title></rect>\n<text x=\"142\" y=\"300\" text-anchor=\"middle\" class=\"button-label\">28</text>\n<rect id=\"thermostat-corridor-set-29\" class=\"control\" x=\"171\" y=\"272\" width=\"46\" height=\"44\" rx=\"10\" fill=\"#eef3f9\" stroke=\"#dfe7ef\" role=\"button\" tabindex=\"0\" aria-label=\"Коридор: задать 29 градусов\"><title>Задать 29 °C</title></rect>\n<text x=\"194\" y=\"300\" text-anchor=\"middle\" class=\"button-label\">29</text>\n<rect id=\"thermostat-corridor-set-30\" class=\"control\" x=\"223\" y=\"272\" width=\"46\" height=\"44\" rx=\"10\" fill=\"#eef3f9\" stroke=\"#dfe7ef\" role=\"button\" tabindex=\"0\" aria-label=\"Коридор: задать 30 градусов\"><title>Задать 30 °C</title></rect>\n<text x=\"246\" y=\"300\" text-anchor=\"middle\" class=\"button-label\">30</text>\n<rect id=\"thermostat-corridor-mode\" class=\"control\" x=\"16\" y=\"345\" width=\"304\" height=\"46\" rx=\"11\" fill=\"#eef3f9\" stroke=\"#dfe7ef\" role=\"button\" tabindex=\"0\" aria-label=\"Коридор: включить или выключить отопление\"><title>Переключить режим отопления</title></rect>\n<text id=\"thermostat-corridor-mode-label\" x=\"168\" y=\"374\" text-anchor=\"middle\" class=\"button-label\" style=\"font-size:14px\">Нет данных</text>\n</g>\n<g id=\"thermostat-bathroom-card\" data-thermostat-card=\"3\" transform=\"translate(12,568)\">\n<rect width=\"336\" height=\"410\" rx=\"18\" fill=\"white\" stroke=\"#dfe7ef\"/>\n<text x=\"20\" y=\"37\" class=\"title\">Ванная</text>\n<path d=\"M20 55H316\" stroke=\"#edf1f6\"/>\n<text id=\"thermostat-bathroom-temperature\" x=\"20\" y=\"111\" style=\"font-size:39px;font-weight:750\">Нет данных</text>\n<text id=\"thermostat-bathroom-sensor-label\" x=\"20\" y=\"135\" class=\"muted\">Датчик термостата</text>\n<rect id=\"thermostat-bathroom-state-bg\" x=\"184\" y=\"81\" width=\"132\" height=\"32\" rx=\"9\" fill=\"#edf7f1\"/>\n<text id=\"thermostat-bathroom-state\" x=\"250\" y=\"102\" text-anchor=\"middle\" style=\"font-size:12px;font-weight:650\">Нет данных</text>\n<text x=\"20\" y=\"167\" class=\"muted\">Уставка устройства</text>\n<text id=\"thermostat-bathroom-setpoint\" x=\"316\" y=\"167\" text-anchor=\"end\" style=\"font-size:17px;font-weight:700\">Нет данных</text>\n<text x=\"20\" y=\"200\" class=\"muted\">Задать температуру · 20–30 °C</text>\n<rect id=\"thermostat-bathroom-set-20\" class=\"control\" x=\"15\" y=\"218\" width=\"46\" height=\"44\" rx=\"10\" fill=\"#eef3f9\" stroke=\"#dfe7ef\" role=\"button\" tabindex=\"0\" aria-label=\"Ванная: задать 20 градусов\"><title>Задать 20 °C</title></rect>\n<text x=\"38\" y=\"246\" text-anchor=\"middle\" class=\"button-label\">20</text>\n<rect id=\"thermostat-bathroom-set-21\" class=\"control\" x=\"67\" y=\"218\" width=\"46\" height=\"44\" rx=\"10\" fill=\"#eef3f9\" stroke=\"#dfe7ef\" role=\"button\" tabindex=\"0\" aria-label=\"Ванная: задать 21 градусов\"><title>Задать 21 °C</title></rect>\n<text x=\"90\" y=\"246\" text-anchor=\"middle\" class=\"button-label\">21</text>\n<rect id=\"thermostat-bathroom-set-22\" class=\"control\" x=\"119\" y=\"218\" width=\"46\" height=\"44\" rx=\"10\" fill=\"#eef3f9\" stroke=\"#dfe7ef\" role=\"button\" tabindex=\"0\" aria-label=\"Ванная: задать 22 градусов\"><title>Задать 22 °C</title></rect>\n<text x=\"142\" y=\"246\" text-anchor=\"middle\" class=\"button-label\">22</text>\n<rect id=\"thermostat-bathroom-set-23\" class=\"control\" x=\"171\" y=\"218\" width=\"46\" height=\"44\" rx=\"10\" fill=\"#eef3f9\" stroke=\"#dfe7ef\" role=\"button\" tabindex=\"0\" aria-label=\"Ванная: задать 23 градусов\"><title>Задать 23 °C</title></rect>\n<text x=\"194\" y=\"246\" text-anchor=\"middle\" class=\"button-label\">23</text>\n<rect id=\"thermostat-bathroom-set-24\" class=\"control\" x=\"223\" y=\"218\" width=\"46\" height=\"44\" rx=\"10\" fill=\"#eef3f9\" stroke=\"#dfe7ef\" role=\"button\" tabindex=\"0\" aria-label=\"Ванная: задать 24 градусов\"><title>Задать 24 °C</title></rect>\n<text x=\"246\" y=\"246\" text-anchor=\"middle\" class=\"button-label\">24</text>\n<rect id=\"thermostat-bathroom-set-25\" class=\"control\" x=\"275\" y=\"218\" width=\"46\" height=\"44\" rx=\"10\" fill=\"#eef3f9\" stroke=\"#dfe7ef\" role=\"button\" tabindex=\"0\" aria-label=\"Ванная: задать 25 градусов\"><title>Задать 25 °C</title></rect>\n<text x=\"298\" y=\"246\" text-anchor=\"middle\" class=\"button-label\">25</text>\n<rect id=\"thermostat-bathroom-set-26\" class=\"control\" x=\"15\" y=\"272\" width=\"46\" height=\"44\" rx=\"10\" fill=\"#eef3f9\" stroke=\"#dfe7ef\" role=\"button\" tabindex=\"0\" aria-label=\"Ванная: задать 26 градусов\"><title>Задать 26 °C</title></rect>\n<text x=\"38\" y=\"300\" text-anchor=\"middle\" class=\"button-label\">26</text>\n<rect id=\"thermostat-bathroom-set-27\" class=\"control\" x=\"67\" y=\"272\" width=\"46\" height=\"44\" rx=\"10\" fill=\"#eef3f9\" stroke=\"#dfe7ef\" role=\"button\" tabindex=\"0\" aria-label=\"Ванная: задать 27 градусов\"><title>Задать 27 °C</title></rect>\n<text x=\"90\" y=\"300\" text-anchor=\"middle\" class=\"button-label\">27</text>\n<rect id=\"thermostat-bathroom-set-28\" class=\"control\" x=\"119\" y=\"272\" width=\"46\" height=\"44\" rx=\"10\" fill=\"#eef3f9\" stroke=\"#dfe7ef\" role=\"button\" tabindex=\"0\" aria-label=\"Ванная: задать 28 градусов\"><title>Задать 28 °C</title></rect>\n<text x=\"142\" y=\"300\" text-anchor=\"middle\" class=\"button-label\">28</text>\n<rect id=\"thermostat-bathroom-set-29\" class=\"control\" x=\"171\" y=\"272\" width=\"46\" height=\"44\" rx=\"10\" fill=\"#eef3f9\" stroke=\"#dfe7ef\" role=\"button\" tabindex=\"0\" aria-label=\"Ванная: задать 29 градусов\"><title>Задать 29 °C</title></rect>\n<text x=\"194\" y=\"300\" text-anchor=\"middle\" class=\"button-label\">29</text>\n<rect id=\"thermostat-bathroom-set-30\" class=\"control\" x=\"223\" y=\"272\" width=\"46\" height=\"44\" rx=\"10\" fill=\"#eef3f9\" stroke=\"#dfe7ef\" role=\"button\" tabindex=\"0\" aria-label=\"Ванная: задать 30 градусов\"><title>Задать 30 °C</title></rect>\n<text x=\"246\" y=\"300\" text-anchor=\"middle\" class=\"button-label\">30</text>\n<rect id=\"thermostat-bathroom-mode\" class=\"control\" x=\"16\" y=\"345\" width=\"304\" height=\"46\" rx=\"11\" fill=\"#eef3f9\" stroke=\"#dfe7ef\" role=\"button\" tabindex=\"0\" aria-label=\"Ванная: включить или выключить отопление\"><title>Переключить режим отопления</title></rect>\n<text id=\"thermostat-bathroom-mode-label\" x=\"168\" y=\"374\" text-anchor=\"middle\" class=\"button-label\" style=\"font-size:14px\">Нет данных</text>\n</g>\n<g id=\"thermostat-livingroom-card\" data-thermostat-card=\"4\" transform=\"translate(368,568)\">\n<rect width=\"336\" height=\"410\" rx=\"18\" fill=\"white\" stroke=\"#dfe7ef\"/>\n<text x=\"20\" y=\"37\" class=\"title\">Гостиная</text>\n<path d=\"M20 55H316\" stroke=\"#edf1f6\"/>\n<text id=\"thermostat-livingroom-temperature\" x=\"20\" y=\"111\" style=\"font-size:39px;font-weight:750\">Нет данных</text>\n<text id=\"thermostat-livingroom-sensor-label\" x=\"20\" y=\"135\" class=\"muted\">Датчик термостата</text>\n<rect id=\"thermostat-livingroom-state-bg\" x=\"184\" y=\"81\" width=\"132\" height=\"32\" rx=\"9\" fill=\"#edf7f1\"/>\n<text id=\"thermostat-livingroom-state\" x=\"250\" y=\"102\" text-anchor=\"middle\" style=\"font-size:12px;font-weight:650\">Нет данных</text>\n<text x=\"20\" y=\"167\" class=\"muted\">Уставка устройства</text>\n<text id=\"thermostat-livingroom-setpoint\" x=\"316\" y=\"167\" text-anchor=\"end\" style=\"font-size:17px;font-weight:700\">Нет данных</text>\n<text x=\"20\" y=\"200\" class=\"muted\">Задать температуру · 20–30 °C</text>\n<rect id=\"thermostat-livingroom-set-20\" class=\"control\" x=\"15\" y=\"218\" width=\"46\" height=\"44\" rx=\"10\" fill=\"#eef3f9\" stroke=\"#dfe7ef\" role=\"button\" tabindex=\"0\" aria-label=\"Гостиная: задать 20 градусов\"><title>Задать 20 °C</title></rect>\n<text x=\"38\" y=\"246\" text-anchor=\"middle\" class=\"button-label\">20</text>\n<rect id=\"thermostat-livingroom-set-21\" class=\"control\" x=\"67\" y=\"218\" width=\"46\" height=\"44\" rx=\"10\" fill=\"#eef3f9\" stroke=\"#dfe7ef\" role=\"button\" tabindex=\"0\" aria-label=\"Гостиная: задать 21 градусов\"><title>Задать 21 °C</title></rect>\n<text x=\"90\" y=\"246\" text-anchor=\"middle\" class=\"button-label\">21</text>\n<rect id=\"thermostat-livingroom-set-22\" class=\"control\" x=\"119\" y=\"218\" width=\"46\" height=\"44\" rx=\"10\" fill=\"#eef3f9\" stroke=\"#dfe7ef\" role=\"button\" tabindex=\"0\" aria-label=\"Гостиная: задать 22 градусов\"><title>Задать 22 °C</title></rect>\n<text x=\"142\" y=\"246\" text-anchor=\"middle\" class=\"button-label\">22</text>\n<rect id=\"thermostat-livingroom-set-23\" class=\"control\" x=\"171\" y=\"218\" width=\"46\" height=\"44\" rx=\"10\" fill=\"#eef3f9\" stroke=\"#dfe7ef\" role=\"button\" tabindex=\"0\" aria-label=\"Гостиная: задать 23 градусов\"><title>Задать 23 °C</title></rect>\n<text x=\"194\" y=\"246\" text-anchor=\"middle\" class=\"button-label\">23</text>\n<rect id=\"thermostat-livingroom-set-24\" class=\"control\" x=\"223\" y=\"218\" width=\"46\" height=\"44\" rx=\"10\" fill=\"#eef3f9\" stroke=\"#dfe7ef\" role=\"button\" tabindex=\"0\" aria-label=\"Гостиная: задать 24 градусов\"><title>Задать 24 °C</title></rect>\n<text x=\"246\" y=\"246\" text-anchor=\"middle\" class=\"button-label\">24</text>\n<rect id=\"thermostat-livingroom-set-25\" class=\"control\" x=\"275\" y=\"218\" width=\"46\" height=\"44\" rx=\"10\" fill=\"#eef3f9\" stroke=\"#dfe7ef\" role=\"button\" tabindex=\"0\" aria-label=\"Гостиная: задать 25 градусов\"><title>Задать 25 °C</title></rect>\n<text x=\"298\" y=\"246\" text-anchor=\"middle\" class=\"button-label\">25</text>\n<rect id=\"thermostat-livingroom-set-26\" class=\"control\" x=\"15\" y=\"272\" width=\"46\" height=\"44\" rx=\"10\" fill=\"#eef3f9\" stroke=\"#dfe7ef\" role=\"button\" tabindex=\"0\" aria-label=\"Гостиная: задать 26 градусов\"><title>Задать 26 °C</title></rect>\n<text x=\"38\" y=\"300\" text-anchor=\"middle\" class=\"button-label\">26</text>\n<rect id=\"thermostat-livingroom-set-27\" class=\"control\" x=\"67\" y=\"272\" width=\"46\" height=\"44\" rx=\"10\" fill=\"#eef3f9\" stroke=\"#dfe7ef\" role=\"button\" tabindex=\"0\" aria-label=\"Гостиная: задать 27 градусов\"><title>Задать 27 °C</title></rect>\n<text x=\"90\" y=\"300\" text-anchor=\"middle\" class=\"button-label\">27</text>\n<rect id=\"thermostat-livingroom-set-28\" class=\"control\" x=\"119\" y=\"272\" width=\"46\" height=\"44\" rx=\"10\" fill=\"#eef3f9\" stroke=\"#dfe7ef\" role=\"button\" tabindex=\"0\" aria-label=\"Гостиная: задать 28 градусов\"><title>Задать 28 °C</title></rect>\n<text x=\"142\" y=\"300\" text-anchor=\"middle\" class=\"button-label\">28</text>\n<rect id=\"thermostat-livingroom-set-29\" class=\"control\" x=\"171\" y=\"272\" width=\"46\" height=\"44\" rx=\"10\" fill=\"#eef3f9\" stroke=\"#dfe7ef\" role=\"button\" tabindex=\"0\" aria-label=\"Гостиная: задать 29 градусов\"><title>Задать 29 °C</title></rect>\n<text x=\"194\" y=\"300\" text-anchor=\"middle\" class=\"button-label\">29</text>\n<rect id=\"thermostat-livingroom-set-30\" class=\"control\" x=\"223\" y=\"272\" width=\"46\" height=\"44\" rx=\"10\" fill=\"#eef3f9\" stroke=\"#dfe7ef\" role=\"button\" tabindex=\"0\" aria-label=\"Гостиная: задать 30 градусов\"><title>Задать 30 °C</title></rect>\n<text x=\"246\" y=\"300\" text-anchor=\"middle\" class=\"button-label\">30</text>\n<rect id=\"thermostat-livingroom-mode\" class=\"control\" x=\"16\" y=\"345\" width=\"304\" height=\"46\" rx=\"11\" fill=\"#eef3f9\" stroke=\"#dfe7ef\" role=\"button\" tabindex=\"0\" aria-label=\"Гостиная: включить или выключить отопление\"><title>Переключить режим отопления</title></rect>\n<text id=\"thermostat-livingroom-mode-label\" x=\"168\" y=\"374\" text-anchor=\"middle\" class=\"button-label\" style=\"font-size:14px\">Нет данных</text>\n</g>\n</svg>\n",
+    "params": [
+      {
+        "id": "thermostat-bedroom-temperature",
+        "read": {
+          "enable": true,
+          "channel": "WB_thermostat_bedroom/local_temperature",
+          "value": "(val !== null && val !== undefined && val !== '' && isFinite(Number(val))) ? Number(val).toFixed(1) + ' °C' : 'Нет данных'"
+        }
+      },
+      {
+        "id": "thermostat-bedroom-sensor-label",
+        "read": {
+          "enable": true,
+          "channel": "Thermostat_bedroom/sensor",
+          "value": "val === 'OU' ? 'Температура пола · выносной датчик' : val === 'IN' ? 'Температура воздуха · встроенный' : val === 'AL' ? 'Воздух · ограничение по датчику пола' : 'Датчик термостата · нет данных'"
+        }
+      },
+      {
+        "id": "thermostat-bedroom-setpoint",
+        "read": {
+          "enable": true,
+          "channel": "WB_thermostat_bedroom/current_heating_setpoint",
+          "value": "(val !== null && val !== undefined && val !== '' && isFinite(Number(val))) ? Number(val).toFixed(1) + ' °C' : 'Нет данных'"
+        }
+      },
+      {
+        "id": "thermostat-bedroom-state",
+        "read": {
+          "enable": true,
+          "channel": "WB_thermostat_bedroom/running_state",
+          "value": "val === 'heat' ? 'Нагревает' : val === 'idle' ? 'Ожидание' : val === 'off' ? 'Выключено' : 'Нет данных'"
+        }
+      },
+      {
+        "id": "thermostat-bedroom-state-bg",
+        "style": {
+          "enable": true,
+          "channel": "WB_thermostat_bedroom/running_state",
+          "value": "val === 'heat' ? ';fill:#fff1df' : val === 'idle' ? ';fill:#edf7f1' : ';fill:#eef3f9'"
+        }
+      },
+      {
+        "id": "thermostat-bedroom-set-20",
+        "write": {
+          "enable": true,
+          "channel": "WB_thermostat_bedroom/current_heating_setpoint",
+          "value": {
+            "on": "20",
+            "off": "20"
+          },
+          "check": false
+        },
+        "style": {
+          "enable": true,
+          "channel": "WB_thermostat_bedroom/current_heating_setpoint",
+          "value": "(val !== null && val !== undefined && Number(val) === 20) ? ';fill:#cfe6fa;stroke:#338ad0' : ';fill:#eef3f9;stroke:#dfe7ef'"
+        }
+      },
+      {
+        "id": "thermostat-bedroom-set-21",
+        "write": {
+          "enable": true,
+          "channel": "WB_thermostat_bedroom/current_heating_setpoint",
+          "value": {
+            "on": "21",
+            "off": "21"
+          },
+          "check": false
+        },
+        "style": {
+          "enable": true,
+          "channel": "WB_thermostat_bedroom/current_heating_setpoint",
+          "value": "(val !== null && val !== undefined && Number(val) === 21) ? ';fill:#cfe6fa;stroke:#338ad0' : ';fill:#eef3f9;stroke:#dfe7ef'"
+        }
+      },
+      {
+        "id": "thermostat-bedroom-set-22",
+        "write": {
+          "enable": true,
+          "channel": "WB_thermostat_bedroom/current_heating_setpoint",
+          "value": {
+            "on": "22",
+            "off": "22"
+          },
+          "check": false
+        },
+        "style": {
+          "enable": true,
+          "channel": "WB_thermostat_bedroom/current_heating_setpoint",
+          "value": "(val !== null && val !== undefined && Number(val) === 22) ? ';fill:#cfe6fa;stroke:#338ad0' : ';fill:#eef3f9;stroke:#dfe7ef'"
+        }
+      },
+      {
+        "id": "thermostat-bedroom-set-23",
+        "write": {
+          "enable": true,
+          "channel": "WB_thermostat_bedroom/current_heating_setpoint",
+          "value": {
+            "on": "23",
+            "off": "23"
+          },
+          "check": false
+        },
+        "style": {
+          "enable": true,
+          "channel": "WB_thermostat_bedroom/current_heating_setpoint",
+          "value": "(val !== null && val !== undefined && Number(val) === 23) ? ';fill:#cfe6fa;stroke:#338ad0' : ';fill:#eef3f9;stroke:#dfe7ef'"
+        }
+      },
+      {
+        "id": "thermostat-bedroom-set-24",
+        "write": {
+          "enable": true,
+          "channel": "WB_thermostat_bedroom/current_heating_setpoint",
+          "value": {
+            "on": "24",
+            "off": "24"
+          },
+          "check": false
+        },
+        "style": {
+          "enable": true,
+          "channel": "WB_thermostat_bedroom/current_heating_setpoint",
+          "value": "(val !== null && val !== undefined && Number(val) === 24) ? ';fill:#cfe6fa;stroke:#338ad0' : ';fill:#eef3f9;stroke:#dfe7ef'"
+        }
+      },
+      {
+        "id": "thermostat-bedroom-set-25",
+        "write": {
+          "enable": true,
+          "channel": "WB_thermostat_bedroom/current_heating_setpoint",
+          "value": {
+            "on": "25",
+            "off": "25"
+          },
+          "check": false
+        },
+        "style": {
+          "enable": true,
+          "channel": "WB_thermostat_bedroom/current_heating_setpoint",
+          "value": "(val !== null && val !== undefined && Number(val) === 25) ? ';fill:#cfe6fa;stroke:#338ad0' : ';fill:#eef3f9;stroke:#dfe7ef'"
+        }
+      },
+      {
+        "id": "thermostat-bedroom-set-26",
+        "write": {
+          "enable": true,
+          "channel": "WB_thermostat_bedroom/current_heating_setpoint",
+          "value": {
+            "on": "26",
+            "off": "26"
+          },
+          "check": false
+        },
+        "style": {
+          "enable": true,
+          "channel": "WB_thermostat_bedroom/current_heating_setpoint",
+          "value": "(val !== null && val !== undefined && Number(val) === 26) ? ';fill:#cfe6fa;stroke:#338ad0' : ';fill:#eef3f9;stroke:#dfe7ef'"
+        }
+      },
+      {
+        "id": "thermostat-bedroom-set-27",
+        "write": {
+          "enable": true,
+          "channel": "WB_thermostat_bedroom/current_heating_setpoint",
+          "value": {
+            "on": "27",
+            "off": "27"
+          },
+          "check": false
+        },
+        "style": {
+          "enable": true,
+          "channel": "WB_thermostat_bedroom/current_heating_setpoint",
+          "value": "(val !== null && val !== undefined && Number(val) === 27) ? ';fill:#cfe6fa;stroke:#338ad0' : ';fill:#eef3f9;stroke:#dfe7ef'"
+        }
+      },
+      {
+        "id": "thermostat-bedroom-set-28",
+        "write": {
+          "enable": true,
+          "channel": "WB_thermostat_bedroom/current_heating_setpoint",
+          "value": {
+            "on": "28",
+            "off": "28"
+          },
+          "check": false
+        },
+        "style": {
+          "enable": true,
+          "channel": "WB_thermostat_bedroom/current_heating_setpoint",
+          "value": "(val !== null && val !== undefined && Number(val) === 28) ? ';fill:#cfe6fa;stroke:#338ad0' : ';fill:#eef3f9;stroke:#dfe7ef'"
+        }
+      },
+      {
+        "id": "thermostat-bedroom-set-29",
+        "write": {
+          "enable": true,
+          "channel": "WB_thermostat_bedroom/current_heating_setpoint",
+          "value": {
+            "on": "29",
+            "off": "29"
+          },
+          "check": false
+        },
+        "style": {
+          "enable": true,
+          "channel": "WB_thermostat_bedroom/current_heating_setpoint",
+          "value": "(val !== null && val !== undefined && Number(val) === 29) ? ';fill:#cfe6fa;stroke:#338ad0' : ';fill:#eef3f9;stroke:#dfe7ef'"
+        }
+      },
+      {
+        "id": "thermostat-bedroom-set-30",
+        "write": {
+          "enable": true,
+          "channel": "WB_thermostat_bedroom/current_heating_setpoint",
+          "value": {
+            "on": "30",
+            "off": "30"
+          },
+          "check": false
+        },
+        "style": {
+          "enable": true,
+          "channel": "WB_thermostat_bedroom/current_heating_setpoint",
+          "value": "(val !== null && val !== undefined && Number(val) === 30) ? ';fill:#cfe6fa;stroke:#338ad0' : ';fill:#eef3f9;stroke:#dfe7ef'"
+        }
+      },
+      {
+        "id": "thermostat-bedroom-mode",
+        "write": {
+          "enable": true,
+          "channel": "WB_thermostat_bedroom/system_mode",
+          "value": {
+            "on": "1",
+            "off": "0"
+          },
+          "check": false
+        },
+        "style": {
+          "enable": true,
+          "channel": "WB_thermostat_bedroom/system_mode",
+          "value": "(val == 1) ? ';fill:#dcece3;stroke:#a9d2b9' : ';fill:#eef3f9;stroke:#dfe7ef'"
+        }
+      },
+      {
+        "id": "thermostat-bedroom-mode-label",
+        "read": {
+          "enable": true,
+          "channel": "WB_thermostat_bedroom/system_mode",
+          "value": "(val == 1) ? 'Отопление включено · выключить' : (val == 0) ? 'Отопление выключено · включить' : 'Нет данных'"
+        }
+      },
+      {
+        "id": "thermostat-shower-temperature",
+        "read": {
+          "enable": true,
+          "channel": "WB_thermostat_shower_room/local_temperature",
+          "value": "(val !== null && val !== undefined && val !== '' && isFinite(Number(val))) ? Number(val).toFixed(1) + ' °C' : 'Нет данных'"
+        }
+      },
+      {
+        "id": "thermostat-shower-sensor-label",
+        "read": {
+          "enable": true,
+          "channel": "Thermostat_shower_room/sensor",
+          "value": "val === 'OU' ? 'Температура пола · выносной датчик' : val === 'IN' ? 'Температура воздуха · встроенный' : val === 'AL' ? 'Воздух · ограничение по датчику пола' : 'Датчик термостата · нет данных'"
+        }
+      },
+      {
+        "id": "thermostat-shower-setpoint",
+        "read": {
+          "enable": true,
+          "channel": "WB_thermostat_shower_room/heating_setpoint_state",
+          "value": "(val !== null && val !== undefined && val !== '' && isFinite(Number(val))) ? Number(val).toFixed(1) + ' °C' : 'Нет данных'"
+        }
+      },
+      {
+        "id": "thermostat-shower-state",
+        "read": {
+          "enable": true,
+          "channel": "WB_thermostat_shower_room/running_state",
+          "value": "val === 'heat' ? 'Нагревает' : val === 'idle' ? 'Ожидание' : val === 'off' ? 'Выключено' : 'Нет данных'"
+        }
+      },
+      {
+        "id": "thermostat-shower-state-bg",
+        "style": {
+          "enable": true,
+          "channel": "WB_thermostat_shower_room/running_state",
+          "value": "val === 'heat' ? ';fill:#fff1df' : val === 'idle' ? ';fill:#edf7f1' : ';fill:#eef3f9'"
+        }
+      },
+      {
+        "id": "thermostat-shower-set-20",
+        "write": {
+          "enable": true,
+          "channel": "WB_thermostat_shower_room/current_heating_setpoint",
+          "value": {
+            "on": "20",
+            "off": "20"
+          },
+          "check": false
+        },
+        "style": {
+          "enable": true,
+          "channel": "WB_thermostat_shower_room/heating_setpoint_state",
+          "value": "(val !== null && val !== undefined && Number(val) === 20) ? ';fill:#cfe6fa;stroke:#338ad0' : ';fill:#eef3f9;stroke:#dfe7ef'"
+        }
+      },
+      {
+        "id": "thermostat-shower-set-21",
+        "write": {
+          "enable": true,
+          "channel": "WB_thermostat_shower_room/current_heating_setpoint",
+          "value": {
+            "on": "21",
+            "off": "21"
+          },
+          "check": false
+        },
+        "style": {
+          "enable": true,
+          "channel": "WB_thermostat_shower_room/heating_setpoint_state",
+          "value": "(val !== null && val !== undefined && Number(val) === 21) ? ';fill:#cfe6fa;stroke:#338ad0' : ';fill:#eef3f9;stroke:#dfe7ef'"
+        }
+      },
+      {
+        "id": "thermostat-shower-set-22",
+        "write": {
+          "enable": true,
+          "channel": "WB_thermostat_shower_room/current_heating_setpoint",
+          "value": {
+            "on": "22",
+            "off": "22"
+          },
+          "check": false
+        },
+        "style": {
+          "enable": true,
+          "channel": "WB_thermostat_shower_room/heating_setpoint_state",
+          "value": "(val !== null && val !== undefined && Number(val) === 22) ? ';fill:#cfe6fa;stroke:#338ad0' : ';fill:#eef3f9;stroke:#dfe7ef'"
+        }
+      },
+      {
+        "id": "thermostat-shower-set-23",
+        "write": {
+          "enable": true,
+          "channel": "WB_thermostat_shower_room/current_heating_setpoint",
+          "value": {
+            "on": "23",
+            "off": "23"
+          },
+          "check": false
+        },
+        "style": {
+          "enable": true,
+          "channel": "WB_thermostat_shower_room/heating_setpoint_state",
+          "value": "(val !== null && val !== undefined && Number(val) === 23) ? ';fill:#cfe6fa;stroke:#338ad0' : ';fill:#eef3f9;stroke:#dfe7ef'"
+        }
+      },
+      {
+        "id": "thermostat-shower-set-24",
+        "write": {
+          "enable": true,
+          "channel": "WB_thermostat_shower_room/current_heating_setpoint",
+          "value": {
+            "on": "24",
+            "off": "24"
+          },
+          "check": false
+        },
+        "style": {
+          "enable": true,
+          "channel": "WB_thermostat_shower_room/heating_setpoint_state",
+          "value": "(val !== null && val !== undefined && Number(val) === 24) ? ';fill:#cfe6fa;stroke:#338ad0' : ';fill:#eef3f9;stroke:#dfe7ef'"
+        }
+      },
+      {
+        "id": "thermostat-shower-set-25",
+        "write": {
+          "enable": true,
+          "channel": "WB_thermostat_shower_room/current_heating_setpoint",
+          "value": {
+            "on": "25",
+            "off": "25"
+          },
+          "check": false
+        },
+        "style": {
+          "enable": true,
+          "channel": "WB_thermostat_shower_room/heating_setpoint_state",
+          "value": "(val !== null && val !== undefined && Number(val) === 25) ? ';fill:#cfe6fa;stroke:#338ad0' : ';fill:#eef3f9;stroke:#dfe7ef'"
+        }
+      },
+      {
+        "id": "thermostat-shower-set-26",
+        "write": {
+          "enable": true,
+          "channel": "WB_thermostat_shower_room/current_heating_setpoint",
+          "value": {
+            "on": "26",
+            "off": "26"
+          },
+          "check": false
+        },
+        "style": {
+          "enable": true,
+          "channel": "WB_thermostat_shower_room/heating_setpoint_state",
+          "value": "(val !== null && val !== undefined && Number(val) === 26) ? ';fill:#cfe6fa;stroke:#338ad0' : ';fill:#eef3f9;stroke:#dfe7ef'"
+        }
+      },
+      {
+        "id": "thermostat-shower-set-27",
+        "write": {
+          "enable": true,
+          "channel": "WB_thermostat_shower_room/current_heating_setpoint",
+          "value": {
+            "on": "27",
+            "off": "27"
+          },
+          "check": false
+        },
+        "style": {
+          "enable": true,
+          "channel": "WB_thermostat_shower_room/heating_setpoint_state",
+          "value": "(val !== null && val !== undefined && Number(val) === 27) ? ';fill:#cfe6fa;stroke:#338ad0' : ';fill:#eef3f9;stroke:#dfe7ef'"
+        }
+      },
+      {
+        "id": "thermostat-shower-set-28",
+        "write": {
+          "enable": true,
+          "channel": "WB_thermostat_shower_room/current_heating_setpoint",
+          "value": {
+            "on": "28",
+            "off": "28"
+          },
+          "check": false
+        },
+        "style": {
+          "enable": true,
+          "channel": "WB_thermostat_shower_room/heating_setpoint_state",
+          "value": "(val !== null && val !== undefined && Number(val) === 28) ? ';fill:#cfe6fa;stroke:#338ad0' : ';fill:#eef3f9;stroke:#dfe7ef'"
+        }
+      },
+      {
+        "id": "thermostat-shower-set-29",
+        "write": {
+          "enable": true,
+          "channel": "WB_thermostat_shower_room/current_heating_setpoint",
+          "value": {
+            "on": "29",
+            "off": "29"
+          },
+          "check": false
+        },
+        "style": {
+          "enable": true,
+          "channel": "WB_thermostat_shower_room/heating_setpoint_state",
+          "value": "(val !== null && val !== undefined && Number(val) === 29) ? ';fill:#cfe6fa;stroke:#338ad0' : ';fill:#eef3f9;stroke:#dfe7ef'"
+        }
+      },
+      {
+        "id": "thermostat-shower-set-30",
+        "write": {
+          "enable": true,
+          "channel": "WB_thermostat_shower_room/current_heating_setpoint",
+          "value": {
+            "on": "30",
+            "off": "30"
+          },
+          "check": false
+        },
+        "style": {
+          "enable": true,
+          "channel": "WB_thermostat_shower_room/heating_setpoint_state",
+          "value": "(val !== null && val !== undefined && Number(val) === 30) ? ';fill:#cfe6fa;stroke:#338ad0' : ';fill:#eef3f9;stroke:#dfe7ef'"
+        }
+      },
+      {
+        "id": "thermostat-shower-mode",
+        "write": {
+          "enable": true,
+          "channel": "WB_thermostat_shower_room/system_mode",
+          "value": {
+            "on": "1",
+            "off": "0"
+          },
+          "check": false
+        },
+        "style": {
+          "enable": true,
+          "channel": "WB_thermostat_shower_room/system_mode",
+          "value": "(val == 1) ? ';fill:#dcece3;stroke:#a9d2b9' : ';fill:#eef3f9;stroke:#dfe7ef'"
+        }
+      },
+      {
+        "id": "thermostat-shower-mode-label",
+        "read": {
+          "enable": true,
+          "channel": "WB_thermostat_shower_room/system_mode",
+          "value": "(val == 1) ? 'Отопление включено · выключить' : (val == 0) ? 'Отопление выключено · включить' : 'Нет данных'"
+        }
+      },
+      {
+        "id": "thermostat-corridor-temperature",
+        "read": {
+          "enable": true,
+          "channel": "WB_thermostat_hallway/local_temperature",
+          "value": "(val !== null && val !== undefined && val !== '' && isFinite(Number(val))) ? Number(val).toFixed(1) + ' °C' : 'Нет данных'"
+        }
+      },
+      {
+        "id": "thermostat-corridor-sensor-label",
+        "read": {
+          "enable": true,
+          "channel": "Thermostat_hallway/sensor",
+          "value": "val === 'OU' ? 'Температура пола · выносной датчик' : val === 'IN' ? 'Температура воздуха · встроенный' : val === 'AL' ? 'Воздух · ограничение по датчику пола' : 'Датчик термостата · нет данных'"
+        }
+      },
+      {
+        "id": "thermostat-corridor-setpoint",
+        "read": {
+          "enable": true,
+          "channel": "WB_thermostat_hallway/current_heating_setpoint",
+          "value": "(val !== null && val !== undefined && val !== '' && isFinite(Number(val))) ? Number(val).toFixed(1) + ' °C' : 'Нет данных'"
+        }
+      },
+      {
+        "id": "thermostat-corridor-state",
+        "read": {
+          "enable": true,
+          "channel": "WB_thermostat_hallway/running_state",
+          "value": "val === 'heat' ? 'Нагревает' : val === 'idle' ? 'Ожидание' : val === 'off' ? 'Выключено' : 'Нет данных'"
+        }
+      },
+      {
+        "id": "thermostat-corridor-state-bg",
+        "style": {
+          "enable": true,
+          "channel": "WB_thermostat_hallway/running_state",
+          "value": "val === 'heat' ? ';fill:#fff1df' : val === 'idle' ? ';fill:#edf7f1' : ';fill:#eef3f9'"
+        }
+      },
+      {
+        "id": "thermostat-corridor-set-20",
+        "write": {
+          "enable": true,
+          "channel": "WB_thermostat_hallway/current_heating_setpoint",
+          "value": {
+            "on": "20",
+            "off": "20"
+          },
+          "check": false
+        },
+        "style": {
+          "enable": true,
+          "channel": "WB_thermostat_hallway/current_heating_setpoint",
+          "value": "(val !== null && val !== undefined && Number(val) === 20) ? ';fill:#cfe6fa;stroke:#338ad0' : ';fill:#eef3f9;stroke:#dfe7ef'"
+        }
+      },
+      {
+        "id": "thermostat-corridor-set-21",
+        "write": {
+          "enable": true,
+          "channel": "WB_thermostat_hallway/current_heating_setpoint",
+          "value": {
+            "on": "21",
+            "off": "21"
+          },
+          "check": false
+        },
+        "style": {
+          "enable": true,
+          "channel": "WB_thermostat_hallway/current_heating_setpoint",
+          "value": "(val !== null && val !== undefined && Number(val) === 21) ? ';fill:#cfe6fa;stroke:#338ad0' : ';fill:#eef3f9;stroke:#dfe7ef'"
+        }
+      },
+      {
+        "id": "thermostat-corridor-set-22",
+        "write": {
+          "enable": true,
+          "channel": "WB_thermostat_hallway/current_heating_setpoint",
+          "value": {
+            "on": "22",
+            "off": "22"
+          },
+          "check": false
+        },
+        "style": {
+          "enable": true,
+          "channel": "WB_thermostat_hallway/current_heating_setpoint",
+          "value": "(val !== null && val !== undefined && Number(val) === 22) ? ';fill:#cfe6fa;stroke:#338ad0' : ';fill:#eef3f9;stroke:#dfe7ef'"
+        }
+      },
+      {
+        "id": "thermostat-corridor-set-23",
+        "write": {
+          "enable": true,
+          "channel": "WB_thermostat_hallway/current_heating_setpoint",
+          "value": {
+            "on": "23",
+            "off": "23"
+          },
+          "check": false
+        },
+        "style": {
+          "enable": true,
+          "channel": "WB_thermostat_hallway/current_heating_setpoint",
+          "value": "(val !== null && val !== undefined && Number(val) === 23) ? ';fill:#cfe6fa;stroke:#338ad0' : ';fill:#eef3f9;stroke:#dfe7ef'"
+        }
+      },
+      {
+        "id": "thermostat-corridor-set-24",
+        "write": {
+          "enable": true,
+          "channel": "WB_thermostat_hallway/current_heating_setpoint",
+          "value": {
+            "on": "24",
+            "off": "24"
+          },
+          "check": false
+        },
+        "style": {
+          "enable": true,
+          "channel": "WB_thermostat_hallway/current_heating_setpoint",
+          "value": "(val !== null && val !== undefined && Number(val) === 24) ? ';fill:#cfe6fa;stroke:#338ad0' : ';fill:#eef3f9;stroke:#dfe7ef'"
+        }
+      },
+      {
+        "id": "thermostat-corridor-set-25",
+        "write": {
+          "enable": true,
+          "channel": "WB_thermostat_hallway/current_heating_setpoint",
+          "value": {
+            "on": "25",
+            "off": "25"
+          },
+          "check": false
+        },
+        "style": {
+          "enable": true,
+          "channel": "WB_thermostat_hallway/current_heating_setpoint",
+          "value": "(val !== null && val !== undefined && Number(val) === 25) ? ';fill:#cfe6fa;stroke:#338ad0' : ';fill:#eef3f9;stroke:#dfe7ef'"
+        }
+      },
+      {
+        "id": "thermostat-corridor-set-26",
+        "write": {
+          "enable": true,
+          "channel": "WB_thermostat_hallway/current_heating_setpoint",
+          "value": {
+            "on": "26",
+            "off": "26"
+          },
+          "check": false
+        },
+        "style": {
+          "enable": true,
+          "channel": "WB_thermostat_hallway/current_heating_setpoint",
+          "value": "(val !== null && val !== undefined && Number(val) === 26) ? ';fill:#cfe6fa;stroke:#338ad0' : ';fill:#eef3f9;stroke:#dfe7ef'"
+        }
+      },
+      {
+        "id": "thermostat-corridor-set-27",
+        "write": {
+          "enable": true,
+          "channel": "WB_thermostat_hallway/current_heating_setpoint",
+          "value": {
+            "on": "27",
+            "off": "27"
+          },
+          "check": false
+        },
+        "style": {
+          "enable": true,
+          "channel": "WB_thermostat_hallway/current_heating_setpoint",
+          "value": "(val !== null && val !== undefined && Number(val) === 27) ? ';fill:#cfe6fa;stroke:#338ad0' : ';fill:#eef3f9;stroke:#dfe7ef'"
+        }
+      },
+      {
+        "id": "thermostat-corridor-set-28",
+        "write": {
+          "enable": true,
+          "channel": "WB_thermostat_hallway/current_heating_setpoint",
+          "value": {
+            "on": "28",
+            "off": "28"
+          },
+          "check": false
+        },
+        "style": {
+          "enable": true,
+          "channel": "WB_thermostat_hallway/current_heating_setpoint",
+          "value": "(val !== null && val !== undefined && Number(val) === 28) ? ';fill:#cfe6fa;stroke:#338ad0' : ';fill:#eef3f9;stroke:#dfe7ef'"
+        }
+      },
+      {
+        "id": "thermostat-corridor-set-29",
+        "write": {
+          "enable": true,
+          "channel": "WB_thermostat_hallway/current_heating_setpoint",
+          "value": {
+            "on": "29",
+            "off": "29"
+          },
+          "check": false
+        },
+        "style": {
+          "enable": true,
+          "channel": "WB_thermostat_hallway/current_heating_setpoint",
+          "value": "(val !== null && val !== undefined && Number(val) === 29) ? ';fill:#cfe6fa;stroke:#338ad0' : ';fill:#eef3f9;stroke:#dfe7ef'"
+        }
+      },
+      {
+        "id": "thermostat-corridor-set-30",
+        "write": {
+          "enable": true,
+          "channel": "WB_thermostat_hallway/current_heating_setpoint",
+          "value": {
+            "on": "30",
+            "off": "30"
+          },
+          "check": false
+        },
+        "style": {
+          "enable": true,
+          "channel": "WB_thermostat_hallway/current_heating_setpoint",
+          "value": "(val !== null && val !== undefined && Number(val) === 30) ? ';fill:#cfe6fa;stroke:#338ad0' : ';fill:#eef3f9;stroke:#dfe7ef'"
+        }
+      },
+      {
+        "id": "thermostat-corridor-mode",
+        "write": {
+          "enable": true,
+          "channel": "WB_thermostat_hallway/system_mode",
+          "value": {
+            "on": "1",
+            "off": "0"
+          },
+          "check": false
+        },
+        "style": {
+          "enable": true,
+          "channel": "WB_thermostat_hallway/system_mode",
+          "value": "(val == 1) ? ';fill:#dcece3;stroke:#a9d2b9' : ';fill:#eef3f9;stroke:#dfe7ef'"
+        }
+      },
+      {
+        "id": "thermostat-corridor-mode-label",
+        "read": {
+          "enable": true,
+          "channel": "WB_thermostat_hallway/system_mode",
+          "value": "(val == 1) ? 'Отопление включено · выключить' : (val == 0) ? 'Отопление выключено · включить' : 'Нет данных'"
+        }
+      },
+      {
+        "id": "thermostat-bathroom-temperature",
+        "read": {
+          "enable": true,
+          "channel": "WB_thermostat_bathroom/local_temperature",
+          "value": "(val !== null && val !== undefined && val !== '' && isFinite(Number(val))) ? Number(val).toFixed(1) + ' °C' : 'Нет данных'"
+        }
+      },
+      {
+        "id": "thermostat-bathroom-sensor-label",
+        "read": {
+          "enable": true,
+          "channel": "Thermostat_bathroom/sensor",
+          "value": "val === 'OU' ? 'Температура пола · выносной датчик' : val === 'IN' ? 'Температура воздуха · встроенный' : val === 'AL' ? 'Воздух · ограничение по датчику пола' : 'Датчик термостата · нет данных'"
+        }
+      },
+      {
+        "id": "thermostat-bathroom-setpoint",
+        "read": {
+          "enable": true,
+          "channel": "WB_thermostat_bathroom/current_heating_setpoint",
+          "value": "(val !== null && val !== undefined && val !== '' && isFinite(Number(val))) ? Number(val).toFixed(1) + ' °C' : 'Нет данных'"
+        }
+      },
+      {
+        "id": "thermostat-bathroom-state",
+        "read": {
+          "enable": true,
+          "channel": "WB_thermostat_bathroom/running_state",
+          "value": "val === 'heat' ? 'Нагревает' : val === 'idle' ? 'Ожидание' : val === 'off' ? 'Выключено' : 'Нет данных'"
+        }
+      },
+      {
+        "id": "thermostat-bathroom-state-bg",
+        "style": {
+          "enable": true,
+          "channel": "WB_thermostat_bathroom/running_state",
+          "value": "val === 'heat' ? ';fill:#fff1df' : val === 'idle' ? ';fill:#edf7f1' : ';fill:#eef3f9'"
+        }
+      },
+      {
+        "id": "thermostat-bathroom-set-20",
+        "write": {
+          "enable": true,
+          "channel": "WB_thermostat_bathroom/current_heating_setpoint",
+          "value": {
+            "on": "20",
+            "off": "20"
+          },
+          "check": false
+        },
+        "style": {
+          "enable": true,
+          "channel": "WB_thermostat_bathroom/current_heating_setpoint",
+          "value": "(val !== null && val !== undefined && Number(val) === 20) ? ';fill:#cfe6fa;stroke:#338ad0' : ';fill:#eef3f9;stroke:#dfe7ef'"
+        }
+      },
+      {
+        "id": "thermostat-bathroom-set-21",
+        "write": {
+          "enable": true,
+          "channel": "WB_thermostat_bathroom/current_heating_setpoint",
+          "value": {
+            "on": "21",
+            "off": "21"
+          },
+          "check": false
+        },
+        "style": {
+          "enable": true,
+          "channel": "WB_thermostat_bathroom/current_heating_setpoint",
+          "value": "(val !== null && val !== undefined && Number(val) === 21) ? ';fill:#cfe6fa;stroke:#338ad0' : ';fill:#eef3f9;stroke:#dfe7ef'"
+        }
+      },
+      {
+        "id": "thermostat-bathroom-set-22",
+        "write": {
+          "enable": true,
+          "channel": "WB_thermostat_bathroom/current_heating_setpoint",
+          "value": {
+            "on": "22",
+            "off": "22"
+          },
+          "check": false
+        },
+        "style": {
+          "enable": true,
+          "channel": "WB_thermostat_bathroom/current_heating_setpoint",
+          "value": "(val !== null && val !== undefined && Number(val) === 22) ? ';fill:#cfe6fa;stroke:#338ad0' : ';fill:#eef3f9;stroke:#dfe7ef'"
+        }
+      },
+      {
+        "id": "thermostat-bathroom-set-23",
+        "write": {
+          "enable": true,
+          "channel": "WB_thermostat_bathroom/current_heating_setpoint",
+          "value": {
+            "on": "23",
+            "off": "23"
+          },
+          "check": false
+        },
+        "style": {
+          "enable": true,
+          "channel": "WB_thermostat_bathroom/current_heating_setpoint",
+          "value": "(val !== null && val !== undefined && Number(val) === 23) ? ';fill:#cfe6fa;stroke:#338ad0' : ';fill:#eef3f9;stroke:#dfe7ef'"
+        }
+      },
+      {
+        "id": "thermostat-bathroom-set-24",
+        "write": {
+          "enable": true,
+          "channel": "WB_thermostat_bathroom/current_heating_setpoint",
+          "value": {
+            "on": "24",
+            "off": "24"
+          },
+          "check": false
+        },
+        "style": {
+          "enable": true,
+          "channel": "WB_thermostat_bathroom/current_heating_setpoint",
+          "value": "(val !== null && val !== undefined && Number(val) === 24) ? ';fill:#cfe6fa;stroke:#338ad0' : ';fill:#eef3f9;stroke:#dfe7ef'"
+        }
+      },
+      {
+        "id": "thermostat-bathroom-set-25",
+        "write": {
+          "enable": true,
+          "channel": "WB_thermostat_bathroom/current_heating_setpoint",
+          "value": {
+            "on": "25",
+            "off": "25"
+          },
+          "check": false
+        },
+        "style": {
+          "enable": true,
+          "channel": "WB_thermostat_bathroom/current_heating_setpoint",
+          "value": "(val !== null && val !== undefined && Number(val) === 25) ? ';fill:#cfe6fa;stroke:#338ad0' : ';fill:#eef3f9;stroke:#dfe7ef'"
+        }
+      },
+      {
+        "id": "thermostat-bathroom-set-26",
+        "write": {
+          "enable": true,
+          "channel": "WB_thermostat_bathroom/current_heating_setpoint",
+          "value": {
+            "on": "26",
+            "off": "26"
+          },
+          "check": false
+        },
+        "style": {
+          "enable": true,
+          "channel": "WB_thermostat_bathroom/current_heating_setpoint",
+          "value": "(val !== null && val !== undefined && Number(val) === 26) ? ';fill:#cfe6fa;stroke:#338ad0' : ';fill:#eef3f9;stroke:#dfe7ef'"
+        }
+      },
+      {
+        "id": "thermostat-bathroom-set-27",
+        "write": {
+          "enable": true,
+          "channel": "WB_thermostat_bathroom/current_heating_setpoint",
+          "value": {
+            "on": "27",
+            "off": "27"
+          },
+          "check": false
+        },
+        "style": {
+          "enable": true,
+          "channel": "WB_thermostat_bathroom/current_heating_setpoint",
+          "value": "(val !== null && val !== undefined && Number(val) === 27) ? ';fill:#cfe6fa;stroke:#338ad0' : ';fill:#eef3f9;stroke:#dfe7ef'"
+        }
+      },
+      {
+        "id": "thermostat-bathroom-set-28",
+        "write": {
+          "enable": true,
+          "channel": "WB_thermostat_bathroom/current_heating_setpoint",
+          "value": {
+            "on": "28",
+            "off": "28"
+          },
+          "check": false
+        },
+        "style": {
+          "enable": true,
+          "channel": "WB_thermostat_bathroom/current_heating_setpoint",
+          "value": "(val !== null && val !== undefined && Number(val) === 28) ? ';fill:#cfe6fa;stroke:#338ad0' : ';fill:#eef3f9;stroke:#dfe7ef'"
+        }
+      },
+      {
+        "id": "thermostat-bathroom-set-29",
+        "write": {
+          "enable": true,
+          "channel": "WB_thermostat_bathroom/current_heating_setpoint",
+          "value": {
+            "on": "29",
+            "off": "29"
+          },
+          "check": false
+        },
+        "style": {
+          "enable": true,
+          "channel": "WB_thermostat_bathroom/current_heating_setpoint",
+          "value": "(val !== null && val !== undefined && Number(val) === 29) ? ';fill:#cfe6fa;stroke:#338ad0' : ';fill:#eef3f9;stroke:#dfe7ef'"
+        }
+      },
+      {
+        "id": "thermostat-bathroom-set-30",
+        "write": {
+          "enable": true,
+          "channel": "WB_thermostat_bathroom/current_heating_setpoint",
+          "value": {
+            "on": "30",
+            "off": "30"
+          },
+          "check": false
+        },
+        "style": {
+          "enable": true,
+          "channel": "WB_thermostat_bathroom/current_heating_setpoint",
+          "value": "(val !== null && val !== undefined && Number(val) === 30) ? ';fill:#cfe6fa;stroke:#338ad0' : ';fill:#eef3f9;stroke:#dfe7ef'"
+        }
+      },
+      {
+        "id": "thermostat-bathroom-mode",
+        "write": {
+          "enable": true,
+          "channel": "WB_thermostat_bathroom/system_mode",
+          "value": {
+            "on": "1",
+            "off": "0"
+          },
+          "check": false
+        },
+        "style": {
+          "enable": true,
+          "channel": "WB_thermostat_bathroom/system_mode",
+          "value": "(val == 1) ? ';fill:#dcece3;stroke:#a9d2b9' : ';fill:#eef3f9;stroke:#dfe7ef'"
+        }
+      },
+      {
+        "id": "thermostat-bathroom-mode-label",
+        "read": {
+          "enable": true,
+          "channel": "WB_thermostat_bathroom/system_mode",
+          "value": "(val == 1) ? 'Отопление включено · выключить' : (val == 0) ? 'Отопление выключено · включить' : 'Нет данных'"
+        }
+      },
+      {
+        "id": "thermostat-livingroom-temperature",
+        "read": {
+          "enable": true,
+          "channel": "WB_thermostat_living_room/local_temperature",
+          "value": "(val !== null && val !== undefined && val !== '' && isFinite(Number(val))) ? Number(val).toFixed(1) + ' °C' : 'Нет данных'"
+        }
+      },
+      {
+        "id": "thermostat-livingroom-sensor-label",
+        "read": {
+          "enable": true,
+          "channel": "Thermostat_living_room/sensor",
+          "value": "val === 'OU' ? 'Температура пола · выносной датчик' : val === 'IN' ? 'Температура воздуха · встроенный' : val === 'AL' ? 'Воздух · ограничение по датчику пола' : 'Датчик термостата · нет данных'"
+        }
+      },
+      {
+        "id": "thermostat-livingroom-setpoint",
+        "read": {
+          "enable": true,
+          "channel": "WB_thermostat_living_room/current_heating_setpoint",
+          "value": "(val !== null && val !== undefined && val !== '' && isFinite(Number(val))) ? Number(val).toFixed(1) + ' °C' : 'Нет данных'"
+        }
+      },
+      {
+        "id": "thermostat-livingroom-state",
+        "read": {
+          "enable": true,
+          "channel": "WB_thermostat_living_room/running_state",
+          "value": "val === 'heat' ? 'Нагревает' : val === 'idle' ? 'Ожидание' : val === 'off' ? 'Выключено' : 'Нет данных'"
+        }
+      },
+      {
+        "id": "thermostat-livingroom-state-bg",
+        "style": {
+          "enable": true,
+          "channel": "WB_thermostat_living_room/running_state",
+          "value": "val === 'heat' ? ';fill:#fff1df' : val === 'idle' ? ';fill:#edf7f1' : ';fill:#eef3f9'"
+        }
+      },
+      {
+        "id": "thermostat-livingroom-set-20",
+        "write": {
+          "enable": true,
+          "channel": "WB_thermostat_living_room/current_heating_setpoint",
+          "value": {
+            "on": "20",
+            "off": "20"
+          },
+          "check": false
+        },
+        "style": {
+          "enable": true,
+          "channel": "WB_thermostat_living_room/current_heating_setpoint",
+          "value": "(val !== null && val !== undefined && Number(val) === 20) ? ';fill:#cfe6fa;stroke:#338ad0' : ';fill:#eef3f9;stroke:#dfe7ef'"
+        }
+      },
+      {
+        "id": "thermostat-livingroom-set-21",
+        "write": {
+          "enable": true,
+          "channel": "WB_thermostat_living_room/current_heating_setpoint",
+          "value": {
+            "on": "21",
+            "off": "21"
+          },
+          "check": false
+        },
+        "style": {
+          "enable": true,
+          "channel": "WB_thermostat_living_room/current_heating_setpoint",
+          "value": "(val !== null && val !== undefined && Number(val) === 21) ? ';fill:#cfe6fa;stroke:#338ad0' : ';fill:#eef3f9;stroke:#dfe7ef'"
+        }
+      },
+      {
+        "id": "thermostat-livingroom-set-22",
+        "write": {
+          "enable": true,
+          "channel": "WB_thermostat_living_room/current_heating_setpoint",
+          "value": {
+            "on": "22",
+            "off": "22"
+          },
+          "check": false
+        },
+        "style": {
+          "enable": true,
+          "channel": "WB_thermostat_living_room/current_heating_setpoint",
+          "value": "(val !== null && val !== undefined && Number(val) === 22) ? ';fill:#cfe6fa;stroke:#338ad0' : ';fill:#eef3f9;stroke:#dfe7ef'"
+        }
+      },
+      {
+        "id": "thermostat-livingroom-set-23",
+        "write": {
+          "enable": true,
+          "channel": "WB_thermostat_living_room/current_heating_setpoint",
+          "value": {
+            "on": "23",
+            "off": "23"
+          },
+          "check": false
+        },
+        "style": {
+          "enable": true,
+          "channel": "WB_thermostat_living_room/current_heating_setpoint",
+          "value": "(val !== null && val !== undefined && Number(val) === 23) ? ';fill:#cfe6fa;stroke:#338ad0' : ';fill:#eef3f9;stroke:#dfe7ef'"
+        }
+      },
+      {
+        "id": "thermostat-livingroom-set-24",
+        "write": {
+          "enable": true,
+          "channel": "WB_thermostat_living_room/current_heating_setpoint",
+          "value": {
+            "on": "24",
+            "off": "24"
+          },
+          "check": false
+        },
+        "style": {
+          "enable": true,
+          "channel": "WB_thermostat_living_room/current_heating_setpoint",
+          "value": "(val !== null && val !== undefined && Number(val) === 24) ? ';fill:#cfe6fa;stroke:#338ad0' : ';fill:#eef3f9;stroke:#dfe7ef'"
+        }
+      },
+      {
+        "id": "thermostat-livingroom-set-25",
+        "write": {
+          "enable": true,
+          "channel": "WB_thermostat_living_room/current_heating_setpoint",
+          "value": {
+            "on": "25",
+            "off": "25"
+          },
+          "check": false
+        },
+        "style": {
+          "enable": true,
+          "channel": "WB_thermostat_living_room/current_heating_setpoint",
+          "value": "(val !== null && val !== undefined && Number(val) === 25) ? ';fill:#cfe6fa;stroke:#338ad0' : ';fill:#eef3f9;stroke:#dfe7ef'"
+        }
+      },
+      {
+        "id": "thermostat-livingroom-set-26",
+        "write": {
+          "enable": true,
+          "channel": "WB_thermostat_living_room/current_heating_setpoint",
+          "value": {
+            "on": "26",
+            "off": "26"
+          },
+          "check": false
+        },
+        "style": {
+          "enable": true,
+          "channel": "WB_thermostat_living_room/current_heating_setpoint",
+          "value": "(val !== null && val !== undefined && Number(val) === 26) ? ';fill:#cfe6fa;stroke:#338ad0' : ';fill:#eef3f9;stroke:#dfe7ef'"
+        }
+      },
+      {
+        "id": "thermostat-livingroom-set-27",
+        "write": {
+          "enable": true,
+          "channel": "WB_thermostat_living_room/current_heating_setpoint",
+          "value": {
+            "on": "27",
+            "off": "27"
+          },
+          "check": false
+        },
+        "style": {
+          "enable": true,
+          "channel": "WB_thermostat_living_room/current_heating_setpoint",
+          "value": "(val !== null && val !== undefined && Number(val) === 27) ? ';fill:#cfe6fa;stroke:#338ad0' : ';fill:#eef3f9;stroke:#dfe7ef'"
+        }
+      },
+      {
+        "id": "thermostat-livingroom-set-28",
+        "write": {
+          "enable": true,
+          "channel": "WB_thermostat_living_room/current_heating_setpoint",
+          "value": {
+            "on": "28",
+            "off": "28"
+          },
+          "check": false
+        },
+        "style": {
+          "enable": true,
+          "channel": "WB_thermostat_living_room/current_heating_setpoint",
+          "value": "(val !== null && val !== undefined && Number(val) === 28) ? ';fill:#cfe6fa;stroke:#338ad0' : ';fill:#eef3f9;stroke:#dfe7ef'"
+        }
+      },
+      {
+        "id": "thermostat-livingroom-set-29",
+        "write": {
+          "enable": true,
+          "channel": "WB_thermostat_living_room/current_heating_setpoint",
+          "value": {
+            "on": "29",
+            "off": "29"
+          },
+          "check": false
+        },
+        "style": {
+          "enable": true,
+          "channel": "WB_thermostat_living_room/current_heating_setpoint",
+          "value": "(val !== null && val !== undefined && Number(val) === 29) ? ';fill:#cfe6fa;stroke:#338ad0' : ';fill:#eef3f9;stroke:#dfe7ef'"
+        }
+      },
+      {
+        "id": "thermostat-livingroom-set-30",
+        "write": {
+          "enable": true,
+          "channel": "WB_thermostat_living_room/current_heating_setpoint",
+          "value": {
+            "on": "30",
+            "off": "30"
+          },
+          "check": false
+        },
+        "style": {
+          "enable": true,
+          "channel": "WB_thermostat_living_room/current_heating_setpoint",
+          "value": "(val !== null && val !== undefined && Number(val) === 30) ? ';fill:#cfe6fa;stroke:#338ad0' : ';fill:#eef3f9;stroke:#dfe7ef'"
+        }
+      },
+      {
+        "id": "thermostat-livingroom-mode",
+        "write": {
+          "enable": true,
+          "channel": "WB_thermostat_living_room/system_mode",
+          "value": {
+            "on": "1",
+            "off": "0"
+          },
+          "check": false
+        },
+        "style": {
+          "enable": true,
+          "channel": "WB_thermostat_living_room/system_mode",
+          "value": "(val == 1) ? ';fill:#dcece3;stroke:#a9d2b9' : ';fill:#eef3f9;stroke:#dfe7ef'"
+        }
+      },
+      {
+        "id": "thermostat-livingroom-mode-label",
+        "read": {
+          "enable": true,
+          "channel": "WB_thermostat_living_room/system_mode",
+          "value": "(val == 1) ? 'Отопление включено · выключить' : (val == 0) ? 'Отопление выключено · включить' : 'Нет данных'"
+        }
+      }
+    ]
+  },
+  "svg_fullwidth": false,
+  "svg_url": "local",
+  "swipe": {
+    "enable": false,
+    "left": null,
+    "right": null
+  },
+  "id": "dashboard4",
+  "name": "Термостаты",
+  "widgets": [],
+  "isSvg": true,
+  "options": {},
+  "chosen": false,
+  "selected": false
+}

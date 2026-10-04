@@ -1,0 +1,3 @@
+.room-thermostat-dashboard body, .room-thermostat-dashboard .page { background:#f3f6fa; }
+.room-thermostat-dashboard .page-title { color:#18283f; font-family:system-ui,sans-serif; font-size:28px; font-weight:750; }
+.room-thermostat-dashboard #wb-thermostat-dashboard { flex:none; max-height:none; }
