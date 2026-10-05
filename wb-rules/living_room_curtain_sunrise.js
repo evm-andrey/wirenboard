@@ -1,10 +1,14 @@
-// Open Living Room curtain at calculated sunrise
+// Open Living Room curtain at sunrise and close it at sunset.
 (function () {
   var vdevName = "LivingRoomSunriseCurtain";
   var mqttDeviceTopic = "zigbee2mqtt/Living Room Curtain";
   var mqttSetTopic = mqttDeviceTopic + "/set";
   var curtainPositionStatePath = "LivingRoomCurtainControl/curtain_position";
   var desiredOpenPosition = 25;
+  var desiredClosedPosition = 100;
+  var eveningActualPosition = null;
+  var nativePositionTopic = "/devices/Living_Room_Curtain/controls/position";
+  var nativePositionPath = "Living_Room_Curtain/position";
   var cronExpr = "* * * * *";
   var degToRad = Math.PI / 180;
   var radToDeg = 180 / Math.PI;
@@ -17,7 +21,12 @@
     offsetMinutes: "offsetMinutes",
     lastOpenedDate: "lastOpenedDate",
     lastActionLog: "lastActionLog",
-    lastError: "lastError"
+    lastError: "lastError",
+    sunsetEnabled: "sunset_enabled",
+    sunsetOffsetMinutes: "sunset_offsetMinutes",
+    lastClosedDate: "lastClosedDate",
+    lastCloseActionLog: "lastCloseActionLog",
+    lastCloseError: "lastCloseError"
   };
 
   function cellPath(name) {
@@ -202,15 +211,15 @@
 
   defineVirtualDevice(vdevName, {
     title: {
-      en: "Living Room Curtain Sunrise",
-      ru: "Расписание рассвета для штор в гостиной"
+      en: "Living Room Curtain Sunrise and Sunset",
+      ru: "Шторы гостиной: рассвет и закат"
     },
     titleReadable: true,
     cells: {
       enabled: {
         type: "switch",
         value: true,
-        title: { en: "Enabled", ru: "Включить" }
+        title: { en: "Open at sunrise", ru: "Открывать на рассвете" }
       },
       latitude: {
         type: "value",
@@ -242,13 +251,41 @@
         type: "text",
         value: "",
         readonly: true,
-        title: { en: "Last action", ru: "Последнее действие" }
+        title: { en: "Last sunrise action", ru: "Последнее действие на рассвете" }
       },
       lastError: {
         type: "text",
         value: "",
         readonly: true,
-        title: { en: "Error", ru: "Ошибка" }
+        title: { en: "Sunrise opening error", ru: "Ошибка открытия на рассвете" }
+      },
+      sunset_enabled: {
+        type: "switch",
+        value: true,
+        title: { en: "Close at sunset", ru: "Закрывать на закате" }
+      },
+      sunset_offsetMinutes: {
+        type: "value",
+        value: 0,
+        title: { en: "Sunset offset (minutes)", ru: "Смещение от заката (минуты)" }
+      },
+      lastClosedDate: {
+        type: "text",
+        value: "",
+        readonly: true,
+        title: { en: "Last close request date", ru: "Последний запрос закрытия" }
+      },
+      lastCloseActionLog: {
+        type: "text",
+        value: "",
+        readonly: true,
+        title: { en: "Last sunset action", ru: "Последнее действие на закате" }
+      },
+      lastCloseError: {
+        type: "text",
+        value: "",
+        readonly: true,
+        title: { en: "Sunset error", ru: "Ошибка вечернего закрытия" }
       }
     }
   });
@@ -293,6 +330,83 @@
       if (!publishOpenCommand(desiredOpenPosition)) { return; }
       dev[cellPath(cells.lastOpenedDate)] = getDateKey(now);
       dev[cellPath(cells.lastActionLog)] = "Open requested at " + now.toISOString();
+    }
+  });
+
+  // Only received telemetry establishes the actual position. A virtual cell's
+  // persisted/default value alone must not initiate an evening movement.
+  function updateEveningPosition(value) {
+    if (typeof value === "string" && value.trim() !== "") { value = Number(value); }
+    if (!isFiniteNumber(value) || value < 0 || value > 100) { return; }
+    if (eveningActualPosition !== value) {
+      eveningActualPosition = value;
+      log("INFO: sunset curtain actual position updated: {}", value);
+    }
+  }
+
+  trackMqtt(nativePositionTopic, function (message) {
+    if (message) { updateEveningPosition(message.value); }
+  });
+
+  trackMqtt(mqttDeviceTopic, function (message) {
+    try {
+      if (!message || typeof message.value !== "string") { return; }
+      var payload = JSON.parse(message.value);
+      if (!payload || typeof payload !== "object" || Array.isArray(payload)) { return; }
+      updateEveningPosition(payload.position);
+    } catch (e) {
+      log("ERROR: sunset curtain MQTT JSON parse failed: {}", e);
+    }
+  });
+
+  // On a hot reload, an existing MQTT subscription need not replay its retained
+  // value to the new handler. Seed only from the driver's actual control.
+  updateEveningPosition(dev[nativePositionPath]);
+
+  defineRule("living_room_sunset_curtain", {
+    when: cron(cronExpr),
+    then: function () {
+      if (!dev[cellPath(cells.sunsetEnabled)]) { return; }
+
+      var now = new Date();
+      var coords = getLatitudeLongitude();
+      var sunset = calcSunTime(shiftToConfiguredTimezone(now), coords.latitude, coords.longitude, false);
+      if (!sunset) {
+        dev[cellPath(cells.lastCloseError)] = "Unable to compute sunset";
+        return;
+      }
+      var offset = getConfiguredNumber(cells.sunsetOffsetMinutes, 0);
+      sunset = new Date(sunset.getTime() + offset * 60000);
+      var diffMs = now.getTime() - sunset.getTime();
+      if (diffMs < 0 || diffMs > 60000) { return; }
+
+      if (dev[cellPath(cells.lastClosedDate)] === getDateKey(now)) {
+        dev[cellPath(cells.lastCloseActionLog)] = "Skipped at " + now.toISOString() + ", close already requested today";
+        return;
+      }
+      if (eveningActualPosition === null) {
+        dev[cellPath(cells.lastCloseError)] = "Actual curtain position unknown";
+        log("WARNING: sunset close skipped: actual curtain position unknown");
+        return;
+      }
+      if (eveningActualPosition === desiredClosedPosition) {
+        dev[cellPath(cells.lastCloseError)] = "";
+        dev[cellPath(cells.lastCloseActionLog)] = "Skipped at " + now.toISOString() + ", already closed";
+        return;
+      }
+
+      var payloadText = JSON.stringify({ position: desiredClosedPosition });
+      try {
+        publish(mqttSetTopic, payloadText, 1, false);
+      } catch (e) {
+        dev[cellPath(cells.lastCloseError)] = "publish failed: " + e;
+        log("ERROR: sunset curtain close publish failed: {}", e);
+        return;
+      }
+      dev[cellPath(cells.lastClosedDate)] = getDateKey(now);
+      dev[cellPath(cells.lastCloseError)] = "";
+      dev[cellPath(cells.lastCloseActionLog)] = "Close requested at " + now.toISOString();
+      log("INFO: living room curtain close by sunset command published: {}", payloadText);
     }
   });
 })();
