@@ -45,8 +45,10 @@
 <text x="194" y="300" text-anchor="middle" class="button-label">29</text>
 <rect id="thermostat-bedroom-set-30" class="control" x="223" y="272" width="46" height="44" rx="10" fill="#eef3f9" stroke="#dfe7ef" role="button" tabindex="0" aria-label="Спальня: задать 30 градусов"><title>Задать 30 °C</title></rect>
 <text x="246" y="300" text-anchor="middle" class="button-label">30</text>
-<rect id="thermostat-bedroom-mode" class="control" x="16" y="345" width="304" height="46" rx="11" fill="#eef3f9" stroke="#dfe7ef" role="button" tabindex="0" aria-label="Спальня: включить или выключить отопление"><title>Переключить режим отопления</title></rect>
-<text id="thermostat-bedroom-mode-label" x="168" y="374" text-anchor="middle" class="button-label" style="font-size:14px">Нет данных</text>
+<rect id="thermostat-bedroom-mode-on" class="control" x="16" y="345" width="146" height="46" rx="11" fill="#eef3f9" stroke="#dfe7ef" role="button" tabindex="0" aria-label="Спальня: включить отопление"><title>Включить отопление</title></rect>
+<text x="89" y="374" text-anchor="middle" class="button-label">Включить</text>
+<rect id="thermostat-bedroom-mode-off" class="control" x="174" y="345" width="146" height="46" rx="11" fill="#eef3f9" stroke="#dfe7ef" role="button" tabindex="0" aria-label="Спальня: выключить отопление"><title>Выключить отопление</title></rect>
+<text x="247" y="374" text-anchor="middle" class="button-label">Выключить</text>
 </g>
 <g id="thermostat-shower-card" data-thermostat-card="1" transform="translate(368,138)">
 <rect width="336" height="410" rx="18" fill="white" stroke="#dfe7ef"/>
@@ -81,8 +83,10 @@
 <text x="194" y="300" text-anchor="middle" class="button-label">29</text>
 <rect id="thermostat-shower-set-30" class="control" x="223" y="272" width="46" height="44" rx="10" fill="#eef3f9" stroke="#dfe7ef" role="button" tabindex="0" aria-label="Душевая: задать 30 градусов"><title>Задать 30 °C</title></rect>
 <text x="246" y="300" text-anchor="middle" class="button-label">30</text>
-<rect id="thermostat-shower-mode" class="control" x="16" y="345" width="304" height="46" rx="11" fill="#eef3f9" stroke="#dfe7ef" role="button" tabindex="0" aria-label="Душевая: включить или выключить отопление"><title>Переключить режим отопления</title></rect>
-<text id="thermostat-shower-mode-label" x="168" y="374" text-anchor="middle" class="button-label" style="font-size:14px">Нет данных</text>
+<rect id="thermostat-shower-mode-on" class="control" x="16" y="345" width="146" height="46" rx="11" fill="#eef3f9" stroke="#dfe7ef" role="button" tabindex="0" aria-label="Душевая: включить отопление"><title>Включить отопление</title></rect>
+<text x="89" y="374" text-anchor="middle" class="button-label">Включить</text>
+<rect id="thermostat-shower-mode-off" class="control" x="174" y="345" width="146" height="46" rx="11" fill="#eef3f9" stroke="#dfe7ef" role="button" tabindex="0" aria-label="Душевая: выключить отопление"><title>Выключить отопление</title></rect>
+<text x="247" y="374" text-anchor="middle" class="button-label">Выключить</text>
 </g>
 <g id="thermostat-corridor-card" data-thermostat-card="2" transform="translate(724,138)">
 <rect width="336" height="410" rx="18" fill="white" stroke="#dfe7ef"/>
@@ -117,8 +121,10 @@
 <text x="194" y="300" text-anchor="middle" class="button-label">29</text>
 <rect id="thermostat-corridor-set-30" class="control" x="223" y="272" width="46" height="44" rx="10" fill="#eef3f9" stroke="#dfe7ef" role="button" tabindex="0" aria-label="Коридор: задать 30 градусов"><title>Задать 30 °C</title></rect>
 <text x="246" y="300" text-anchor="middle" class="button-label">30</text>
-<rect id="thermostat-corridor-mode" class="control" x="16" y="345" width="304" height="46" rx="11" fill="#eef3f9" stroke="#dfe7ef" role="button" tabindex="0" aria-label="Коридор: включить или выключить отопление"><title>Переключить режим отопления</title></rect>
-<text id="thermostat-corridor-mode-label" x="168" y="374" text-anchor="middle" class="button-label" style="font-size:14px">Нет данных</text>
+<rect id="thermostat-corridor-mode-on" class="control" x="16" y="345" width="146" height="46" rx="11" fill="#eef3f9" stroke="#dfe7ef" role="button" tabindex="0" aria-label="Коридор: включить отопление"><title>Включить отопление</title></rect>
+<text x="89" y="374" text-anchor="middle" class="button-label">Включить</text>
+<rect id="thermostat-corridor-mode-off" class="control" x="174" y="345" width="146" height="46" rx="11" fill="#eef3f9" stroke="#dfe7ef" role="button" tabindex="0" aria-label="Коридор: выключить отопление"><title>Выключить отопление</title></rect>
+<text x="247" y="374" text-anchor="middle" class="button-label">Выключить</text>
 </g>
 <g id="thermostat-bathroom-card" data-thermostat-card="3" transform="translate(12,568)">
 <rect width="336" height="410" rx="18" fill="white" stroke="#dfe7ef"/>
@@ -153,8 +159,10 @@
 <text x="194" y="300" text-anchor="middle" class="button-label">29</text>
 <rect id="thermostat-bathroom-set-30" class="control" x="223" y="272" width="46" height="44" rx="10" fill="#eef3f9" stroke="#dfe7ef" role="button" tabindex="0" aria-label="Ванная: задать 30 градусов"><title>Задать 30 °C</title></rect>
 <text x="246" y="300" text-anchor="middle" class="button-label">30</text>
-<rect id="thermostat-bathroom-mode" class="control" x="16" y="345" width="304" height="46" rx="11" fill="#eef3f9" stroke="#dfe7ef" role="button" tabindex="0" aria-label="Ванная: включить или выключить отопление"><title>Переключить режим отопления</title></rect>
-<text id="thermostat-bathroom-mode-label" x="168" y="374" text-anchor="middle" class="button-label" style="font-size:14px">Нет данных</text>
+<rect id="thermostat-bathroom-mode-on" class="control" x="16" y="345" width="146" height="46" rx="11" fill="#eef3f9" stroke="#dfe7ef" role="button" tabindex="0" aria-label="Ванная: включить отопление"><title>Включить отопление</title></rect>
+<text x="89" y="374" text-anchor="middle" class="button-label">Включить</text>
+<rect id="thermostat-bathroom-mode-off" class="control" x="174" y="345" width="146" height="46" rx="11" fill="#eef3f9" stroke="#dfe7ef" role="button" tabindex="0" aria-label="Ванная: выключить отопление"><title>Выключить отопление</title></rect>
+<text x="247" y="374" text-anchor="middle" class="button-label">Выключить</text>
 </g>
 <g id="thermostat-livingroom-card" data-thermostat-card="4" transform="translate(368,568)">
 <rect width="336" height="410" rx="18" fill="white" stroke="#dfe7ef"/>
@@ -189,7 +197,9 @@
 <text x="194" y="300" text-anchor="middle" class="button-label">29</text>
 <rect id="thermostat-livingroom-set-30" class="control" x="223" y="272" width="46" height="44" rx="10" fill="#eef3f9" stroke="#dfe7ef" role="button" tabindex="0" aria-label="Гостиная: задать 30 градусов"><title>Задать 30 °C</title></rect>
 <text x="246" y="300" text-anchor="middle" class="button-label">30</text>
-<rect id="thermostat-livingroom-mode" class="control" x="16" y="345" width="304" height="46" rx="11" fill="#eef3f9" stroke="#dfe7ef" role="button" tabindex="0" aria-label="Гостиная: включить или выключить отопление"><title>Переключить режим отопления</title></rect>
-<text id="thermostat-livingroom-mode-label" x="168" y="374" text-anchor="middle" class="button-label" style="font-size:14px">Нет данных</text>
+<rect id="thermostat-livingroom-mode-on" class="control" x="16" y="345" width="146" height="46" rx="11" fill="#eef3f9" stroke="#dfe7ef" role="button" tabindex="0" aria-label="Гостиная: включить отопление"><title>Включить отопление</title></rect>
+<text x="89" y="374" text-anchor="middle" class="button-label">Включить</text>
+<rect id="thermostat-livingroom-mode-off" class="control" x="174" y="345" width="146" height="46" rx="11" fill="#eef3f9" stroke="#dfe7ef" role="button" tabindex="0" aria-label="Гостиная: выключить отопление"><title>Выключить отопление</title></rect>
+<text x="247" y="374" text-anchor="middle" class="button-label">Выключить</text>
 </g>
 </svg>

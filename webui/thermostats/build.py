@@ -37,7 +37,7 @@ for i,(key,name,dev) in enumerate(rooms):
     number(dev+'/local_temperature',p+'-temperature')
     sensor_device=dev.replace('WB_thermostat_', 'Thermostat_')
     binding(p+'-sensor-label','read',sensor_device+'/sensor',value="val === 'OU' ? 'Температура пола · выносной датчик' : val === 'IN' ? 'Температура воздуха · встроенный' : val === 'AL' ? 'Воздух · ограничение по датчику пола' : 'Датчик термостата · нет данных'")
-    actual=dev+('/heating_setpoint_state' if key=='shower' else '/current_heating_setpoint')
+    actual=dev+'/heating_setpoint_state'
     number(actual,p+'-setpoint')
     binding(p+'-state','read',dev+'/running_state',value="val === 'heat' ? 'Нагревает' : val === 'idle' ? 'Ожидание' : val === 'off' ? 'Выключено' : 'Нет данных'")
     binding(p+'-state-bg','style',dev+'/running_state',value="val === 'heat' ? ';fill:#fff1df' : val === 'idle' ? ';fill:#edf7f1' : ';fill:#eef3f9'")
@@ -46,10 +46,11 @@ for i,(key,name,dev) in enumerate(rooms):
         svg.extend([f'<rect id="{bid}" class="control" x="{bx}" y="{by}" width="46" height="44" rx="10" fill="#eef3f9" stroke="#dfe7ef" role="button" tabindex="0" aria-label="{name}: задать {n} градусов"><title>Задать {n} °C</title></rect>',
          f'<text x="{bx+23}" y="{by+28}" text-anchor="middle" class="button-label">{n}</text>'])
         params.append({'id':bid,'write':{'enable':True,'channel':dev+'/current_heating_setpoint','value':{'on':str(n),'off':str(n)},'check':False},'style':{'enable':True,'channel':actual,'value':f"(val !== null && val !== undefined && Number(val) === {n}) ? ';fill:#cfe6fa;stroke:#338ad0' : ';fill:#eef3f9;stroke:#dfe7ef'"}})
-    svg.extend([f'<rect id="{p}-mode" class="control" x="16" y="345" width="304" height="46" rx="11" fill="#eef3f9" stroke="#dfe7ef" role="button" tabindex="0" aria-label="{name}: включить или выключить отопление"><title>Переключить режим отопления</title></rect>',
-      f'<text id="{p}-mode-label" x="168" y="374" text-anchor="middle" class="button-label" style="font-size:14px">Нет данных</text>', '</g>'])
-    params.append({'id':p+'-mode','write':{'enable':True,'channel':dev+'/system_mode','value':{'on':'1','off':'0'},'check':False},'style':{'enable':True,'channel':dev+'/system_mode','value':"(val == 1) ? ';fill:#dcece3;stroke:#a9d2b9' : ';fill:#eef3f9;stroke:#dfe7ef'"}})
-    binding(p+'-mode-label','read',dev+'/system_mode',value="(val == 1) ? 'Отопление включено · выключить' : (val == 0) ? 'Отопление выключено · включить' : 'Нет данных'")
+    for mode,label,bx in [('on','Включить',16),('off','Выключить',174)]:
+        mid=p+'-mode-'+mode;value='1' if mode=='on' else '0'
+        svg.extend([f'<rect id="{mid}" class="control" x="{bx}" y="345" width="146" height="46" rx="11" fill="#eef3f9" stroke="#dfe7ef" role="button" tabindex="0" aria-label="{name}: {label.lower()} отопление"><title>{label} отопление</title></rect>',f'<text x="{bx+73}" y="374" text-anchor="middle" class="button-label">{label}</text>'])
+        params.append({'id':mid,'write':{'enable':True,'channel':dev+'/system_mode','value':{'on':value,'off':value},'check':False},'style':{'enable':True,'channel':dev+'/system_mode_state','value':f"(val == {value}) ? ';fill:#dcece3;stroke:#a9d2b9' : ';fill:#eef3f9;stroke:#dfe7ef'"}})
+    svg.append('</g>')
 svg.append('</svg>')
 source='\n'.join(svg)+'\n';ET.fromstring(source)
 (HERE/'dashboard.svg').write_text(source)
