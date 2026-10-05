@@ -182,7 +182,7 @@
 
   function publishOpenCommand(targetPosition) {
     var safePosition = clampPosition(targetPosition);
-    if (safePosition === null) return;
+    if (safePosition === null) return false;
 
     var payload = {
       position: safePosition
@@ -192,9 +192,11 @@
     try {
       publish(mqttSetTopic, payloadText, 1, false);
       log("INFO: living room curtain open by sunrise command published: {}", payloadText);
+      return true;
     } catch (e) {
       log("ERROR: publish curtain command failed: {}", e);
       dev[cellPath(cells.lastError)] = "publish failed: " + e;
+      return false;
     }
   }
 
@@ -234,7 +236,7 @@
         type: "text",
         value: "",
         readonly: true,
-        title: { en: "Last opened date", ru: "Последнее открытие" }
+        title: { en: "Last open request date", ru: "Последний запрос открытия" }
       },
       lastActionLog: {
         type: "text",
@@ -274,7 +276,7 @@
       sunrise = new Date(sunrise.getTime() + offsetAtMs);
 
       var diffMs = now.getTime() - sunrise.getTime();
-      if (Math.abs(diffMs) > 60 * 1000) {
+      if (diffMs < 0 || diffMs > 60 * 1000) {
         return;
       }
 
@@ -288,9 +290,9 @@
         return;
       }
 
-      publishOpenCommand(desiredOpenPosition);
+      if (!publishOpenCommand(desiredOpenPosition)) { return; }
       dev[cellPath(cells.lastOpenedDate)] = getDateKey(now);
-      dev[cellPath(cells.lastActionLog)] = "Opened at " + now.toISOString();
+      dev[cellPath(cells.lastActionLog)] = "Open requested at " + now.toISOString();
     }
   });
 })();

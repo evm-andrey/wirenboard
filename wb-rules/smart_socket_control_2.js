@@ -64,7 +64,8 @@ function normalizeState(rawState) {
 }
 
 function publishStateCommand(desiredState) {
-  var actualState = toBooleanState(dev[socketStatePath]);
+  var actualState = normalizeState(dev[socketStatePath]);
+  if (actualState === null) { log("Socket command skipped: unknown actual state"); return; }
   if (desiredState === actualState) {
     log("No MQTT command sent: already in state " + (actualState ? mqttStateOn : mqttStateOff));
     return;
@@ -72,7 +73,11 @@ function publishStateCommand(desiredState) {
 
   var now = Date.now();
   if (lastCommandAt > 0 && (now - lastCommandAt) < commandCooldownMs) {
-    log("No MQTT command sent: cooldown " + commandCooldownMs + " ms");
+    var remaining = commandCooldownMs - (now - lastCommandAt);
+    pendingCommandTimer = setTimeout(function () {
+      pendingCommandTimer = null; publishStateCommand(desiredState);
+    }, remaining);
+    log("Socket last command deferred for cooldown");
     return;
   }
 
@@ -85,6 +90,7 @@ function publishStateCommand(desiredState) {
 
 function debounceCommand(newState) {
   if (pendingCommandTimer !== null) {
+    clearTimeout(pendingCommandTimer);
     log("MQTT command pending, rescheduling for debounce");
   }
   pendingCommandState = newState;
@@ -163,35 +169,41 @@ defineVirtualDevice("SmartSocketControl2", {
       readonly: true
     },
     power_value: {
+      readonly: true,
       type:  "value",
       title: { "en": "Power Consumption", "ru": "Потребляемая мощность" },
       value: 0,
       units: "W"
     },
     current_value: {
+      readonly: true,
       type:  "value",
       title: { "en": "Current", "ru": "Ток" },
       value: 0,
       units: "A"
     },
     voltage_value: {
+      readonly: true,
       type:  "value",
       title: { "en": "Voltage", "ru": "Напряжение" },
       value: 0,
       units: "V"
     },
     energy_value: {
+      readonly: true,
       type:  "value",
       title: { "en": "Energy Consumption Total", "ru": "Сумма потреблённой энергии" },
       value: 0,
       units: "kWh"
     },
     linkquality_value: {
+      readonly: true,
       type:  "value",
       title: { "en": "Link Quality", "ru": "Качество связи" },
       value: 0
     },
     last_seen_value: {
+      readonly: true,
       type:  "text",
       title: { "en": "Last Seen", "ru": "Последний контакт" },
       value: ""
@@ -254,4 +266,11 @@ trackMqtt(mqttDeviceTopic, function (message) {
   } catch (e) {
     log("MQTT JSON parse error: " + e);
   }
+});
+
+// Explicit requests must work even when the command value is unchanged.
+trackMqtt("/devices/SmartSocketControl2/controls/socket_cmd/on", function (message) {
+  if (message.retained) { return; }
+  var desired = normalizeState(message.value);
+  if (desired !== null) { debounceCommand(desired); }
 });

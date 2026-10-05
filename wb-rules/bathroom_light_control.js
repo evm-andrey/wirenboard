@@ -1,10 +1,22 @@
-// Rule for controlling lighting in the bathroom
-defineRule({
-    whenChanged: "wb-mr6c_130/Input 5 Double Press Counter",
-    then: function (newValue, devName, cellName) {
-      log('Toggle wb-mr6c_111/K1');
-      // Toggle the relay state
-      dev["wb-mr6c_111/K1"] = !dev["wb-mr6c_111/K1"];
+// Count increments are button events; initial values and resets are not.
+(function () {
+  var counter = 'wb-mr6c_130/Input 5 Double Press Counter';
+  var lights = ['wb-mr6c_111/K1'];
+  var previous = null;
+  function valid(v) { return typeof v === "number" && isFinite(v) && v >= 0 && Math.floor(v) === v; }
+  setTimeout(function () { var value = dev[counter]; if (valid(value)) { previous = value; } }, 1000);
+  defineRule('bathroom_light_control', {
+    whenChanged: counter,
+    then: function (value) {
+      if (!valid(value)) { log("Double press ignored: invalid counter"); return; }
+      if (previous === null || value <= previous) { previous = value; return; }
+      previous = value;
+      for (var i = 0; i < lights.length; i++) {
+        var actual = dev[lights[i]];
+        if (typeof actual !== "boolean") { log("Double press skipped: unknown " + lights[i]); continue; }
+        dev[lights[i]] = !actual;
+        log("Double press toggled " + lights[i]);
+      }
     }
   });
-  
+})();

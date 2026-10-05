@@ -18,6 +18,13 @@ var cells = {
 };
 
 var lastCommandAt = 0;
+var positionKnown = false;
+var pendingPositionTimer = null;
+var previousRemoteCounter = null;
+setTimeout(function () {
+  var value = dev[remoteInputCell];
+  if (typeof value === "number" && isFinite(value) && value >= 0) { previousRemoteCounter = value; }
+}, 1000);
 var openThreshold = 50;
 
 /*********************
@@ -66,20 +73,24 @@ function isMostlyOpen(positionPercent) {
 }
 
 function publishCurtainPosition(targetPercent) {
+  if (pendingPositionTimer !== null) { clearTimeout(pendingPositionTimer); pendingPositionTimer = null; }
   var target = clampPosition(targetPercent);
   if (target === null) {
     log("MQTT curtain command skipped: invalid target position");
     return;
   }
 
-  if (toFiniteNumber(dev[cellPath(cells.position)]) === target) {
+  if (positionKnown && toFiniteNumber(dev[cellPath(cells.position)]) === target) {
     log("No MQTT command sent: curtain already at " + target + "%");
     return;
   }
 
   var now = Date.now();
   if (lastCommandAt > 0 && (now - lastCommandAt) < commandCooldownMs) {
-    log("No MQTT command sent: cooldown " + commandCooldownMs + " ms");
+    pendingPositionTimer = setTimeout(function () {
+      pendingPositionTimer = null; publishCurtainPosition(target);
+    }, commandCooldownMs - (now - lastCommandAt));
+    log("Curtain target deferred for cooldown");
     return;
   }
 
@@ -87,15 +98,13 @@ function publishCurtainPosition(targetPercent) {
   publish(mqttSetTopic, payload, 1, false);
   lastCommandAt = now;
 
-  setIfChanged(cells.position, target);
+  // Actual position is updated only by received device telemetry.
   log("MQTT curtain command published to " + mqttSetTopic + ": " + payload);
 }
 
 function toggleCurtain() {
   var current = toFiniteNumber(dev[cellPath(cells.position)]);
-  if (current === null) {
-    current = 100;
-  }
+  if (!positionKnown || current === null) { log("Curtain toggle skipped: position unknown"); return; }
   publishCurtainPosition(isMostlyOpen(current) ? 100 : 25);
 }
 
@@ -109,15 +118,7 @@ function handleStatePayload(payload) {
     nextState = clampPosition(payload.position);
   }
 
-  if (nextState === null && typeof payload.state === "string") {
-    var normalized = payload.state.toUpperCase();
-    if (normalized === "OPEN" || normalized === "OPENING") {
-      nextState = 25;
-    } else if (normalized === "CLOSED" || normalized === "CLOSING") {
-      nextState = 100;
-    }
-  }
-
+  if (nextState !== null) { positionKnown = true; }
   if (nextState !== null && setIfChanged(cells.position, nextState)) {
     log("Curtain actual state updated from MQTT: " + nextState + "%");
   }
@@ -173,7 +174,10 @@ defineRule({
 defineRule({
   name: vdevName + "/toggle_remote",
   whenChanged: remoteInputCell,
-  then: function () {
+  then: function (value) {
+    if (typeof value !== "number" || !isFinite(value) || value < 0 || Math.floor(value) !== value) { return; }
+    if (previousRemoteCounter === null || value <= previousRemoteCounter) { previousRemoteCounter = value; return; }
+    previousRemoteCounter = value;
     log("Toggle from remote input");
     toggleCurtain();
   }
@@ -222,9 +226,16 @@ trackMqtt(mqttDeviceTopic, function (message) {
     }
 
     var payload = JSON.parse(message.value);
+    if (!payload || typeof payload !== "object" || Array.isArray(payload)) { return; }
     handleStatePayload(payload);
   } catch (e) {
     log("MQTT JSON parse error: " + e);
+  }
+});
+trackMqtt("/devices/Living_Room_Curtain/controls/position", function (message) {
+  var value = Number(message.value);
+  if (typeof message.value === "string" && message.value.trim() !== "" && isFinite(value) && value >= 0 && value <= 100) {
+    positionKnown = true; setIfChanged(cells.position, value);
   }
 });
 })();

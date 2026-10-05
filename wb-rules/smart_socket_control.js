@@ -6,7 +6,7 @@ defineRule({
   when: cron("0 0 20 * *"),
   then: function () {
     // Change only the COMMAND switch; actual state will be updated from MQTT
-    dev["SmartSocketControl/socket_cmd"] = false;
+    requestSocketState(false);
     log("Schedule: command sent to turn socket OFF at 20:00");
   }
 });
@@ -16,7 +16,7 @@ defineRule({
   when: cron("0 0 5 * *"),
   then: function () {
     // Change only the COMMAND switch; actual state will be updated from MQTT
-    dev["SmartSocketControl/socket_cmd"] = true;
+    requestSocketState(true);
     log("Schedule: command sent to turn socket ON at 05:00");
   }
 });
@@ -50,18 +50,21 @@ defineVirtualDevice("SmartSocketControl", {
       readonly: true
     },
     power_value: {
+      readonly: true,
       type:  "value",
       title: { 'en': 'Power Consumption', 'ru': 'Потребляемая мощность' },
       value: 0,
       units: "W"
     },
     voltage_value: {
+      readonly: true,
       type:  "value",
       title: { 'en': 'Voltage', 'ru': 'Напряжение' },
       value: 0,
       units: "V"
     },
     energy_value: {
+      readonly: true,
       type:  "value",
       title: { 'en': 'Energy Consumption Total', 'ru': 'Сумма потреблённой энергии' },
       value: 0,
@@ -74,22 +77,27 @@ defineVirtualDevice("SmartSocketControl", {
  *  RULES: COMMAND → MQTT
  *  - Send MQTT command only if desired != actual to reduce traffic & avoid loops.
  *********************/
-defineRule({
+var lastSocketCommand = null;
+var lastSocketCommandAt = 0;
+function requestSocketState(newValue) {
+  if (typeof newValue !== "boolean") { log("Socket rejected invalid command"); return; }
+  if (dev["SmartSocketControl/socket_cmd"] !== newValue) { dev["SmartSocketControl/socket_cmd"] = newValue; }
+  var actual = dev["SmartSocketControl/socket_state"];
+  if (typeof actual !== "boolean") { log("Socket command skipped: unknown actual state"); return; }
+  if (actual === newValue) { return; }
+  var now = Date.now();
+  if (lastSocketCommand === newValue && now - lastSocketCommandAt < 500) { return; }
+  publish(mqttSetTopic, JSON.stringify({ state: newValue ? "ON" : "OFF" }), 1, false);
+  lastSocketCommand = newValue; lastSocketCommandAt = now;
+  log("Socket requested " + (newValue ? "ON" : "OFF"));
+}
+defineRule("smart_socket_command", {
   whenChanged: "SmartSocketControl/socket_cmd",
-  then: function (newValue) {
-    var desired = newValue ? "ON" : "OFF";
-    var actual  = dev["SmartSocketControl/socket_state"] ? "ON" : "OFF";
-
-    if (desired === actual) {
-      log("No MQTT command sent: actual state is already " + actual);
-      return;
-    }
-
-    var command = JSON.stringify({ state: desired });
-    // publish(topic, payload, [qos], [retain])
-    publish(mqttSetTopic, command);
-    log("MQTT command published to " + mqttSetTopic + ": " + command);
-  }
+  then: requestSocketState
+});
+trackMqtt("/devices/SmartSocketControl/controls/socket_cmd/on", function (message) {
+  if (message.retained) { return; }
+  if (message.value === "1" || message.value === "0") { requestSocketState(message.value === "1"); }
 });
 
 /*********************
@@ -100,6 +108,7 @@ defineRule({
 trackMqtt(mqttDeviceTopic, function (message) {
   try {
     var payload = JSON.parse(message.value);
+    if (!payload || typeof payload !== "object" || Array.isArray(payload)) { return; }
     log("MQTT message received from " + mqttDeviceTopic + ": " + JSON.stringify(payload));
 
     // Update actual ON/OFF state (only if it really changed)
@@ -112,15 +121,15 @@ trackMqtt(mqttDeviceTopic, function (message) {
     }
 
     // Update telemetry if present
-    if (typeof payload.power === "number") {
+    if (typeof payload.power === "number" && isFinite(payload.power)) {
       dev["SmartSocketControl/power_value"] = payload.power;
       log("Power: " + payload.power + " W");
     }
-    if (typeof payload.voltage === "number") {
+    if (typeof payload.voltage === "number" && isFinite(payload.voltage)) {
       dev["SmartSocketControl/voltage_value"] = payload.voltage;
       log("Voltage: " + payload.voltage + " V");
     }
-    if (typeof payload.energy === "number") {
+    if (typeof payload.energy === "number" && isFinite(payload.energy)) {
       dev["SmartSocketControl/energy_value"] = payload.energy;
       log("Energy total: " + payload.energy + " kWh");
     }
